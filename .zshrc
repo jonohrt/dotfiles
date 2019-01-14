@@ -30,7 +30,6 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-eval $(thefuck --alias)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
@@ -138,6 +137,9 @@ alias -g dcr='docker-compose run '
 alias -g list-ports='sudo lsof -PiTCP -sTCP:LISTEN'
 
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias gpo='git pull origin'
+alias gc="git checkout"
+alias gcb='git checkout -b'
 
 # Add autocomplete to the custom tmux functions.
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
@@ -169,6 +171,9 @@ if [ -f '/Users/jonohrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then s
 
 # Start rbenv
 eval "$(rbenv init -)"
+
+#Start direnv
+eval "$(direnv hook zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
