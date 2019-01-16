@@ -19,7 +19,7 @@ Add this alias to your `.bashrc` or `.zshrc`. From now on, any git operation you
 Let’s add a remote, and also set status not to show untracked files:
 
     dotfiles config --local status.showUntrackedFiles no
-    dotfiles remote add origin git@github.com:anandpiyer/.dotfiles.git
+    dotfiles remote add origin git@github.com:jonohrt/dotfiles.git
 
 You’ll need to change the remote URL to your git repo. Now, you can easily add the config files you want to be in version control from where they are supposed to be, commit and push. For example, to add `tmux` config files, I’ll do:
 
@@ -33,11 +33,11 @@ Setting Up a New Machine
 
 To set up a new machine to use your version controlled config files, all you need to do is to clone the repository on your new machine telling git that it is a bare repository:
 
-    git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anandpiyer/.dotfiles.git ~
+    git clone --separate-git-dir=$HOME/.dotfiles git@github.com:jonohrt/dotfiles.git ~
 
 However, some programs create default config files, so this might fail if git finds an existing config file in your `$HOME`. In that case, a simple solution is to clone to a temporary directory, and then delete it once you are done:
 
-    git clone --separate-git-dir=$HOME/.dotfiles https://github.com/anandpiyer/.dotfiles.git tmpdotfiles
+    git clone --separate-git-dir=$HOME/.dotfiles git@github.com:jonohrt/dotfiles.git tmpdotfiles
     rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
     rm -r tmpdotfiles
 
