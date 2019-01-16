@@ -4,10 +4,11 @@ call plug#begin('~/.vim/bundle')
 " GENERAL
 "
 "
-Plug 'svermeulen/vim-cutlass'
+" Plug 'svermeulen/vim-cutlass'
+Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'svermeulen/vim-yoink'
 Plug 'svermeulen/vim-subversive'
-Plug 'takac/vim-hardtime'
 Plug 'romainl/vim-cool'
 Plug 'Chun-Yang/vim-textobj-chunk'
 Plug 'kana/vim-textobj-user'
@@ -21,8 +22,8 @@ Plug 'unblevable/quick-scope'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 Plug 'sbdchd/neoformat'
 Plug 'snoe/nvim-parinfer.js'
-" Plug 'dyng/ctrlsf.vim'
-" Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'dyng/ctrlsf.vim'
+Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'sjl/gundo.vim'
 " Plug 'tomlion/vim-solidity'
 Plug 'mxw/vim-jsx'
@@ -48,7 +49,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rizzatti/dash.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'vim-scripts/rubycomplete.vim'
+" Plug 'vim-scripts/rubycomplete.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tommcdo/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
@@ -77,7 +78,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-endwise'
 " Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 "
 " Language syntax highlighting
 " Plug 'digitaltoad/vim-pug'
@@ -214,12 +215,12 @@ let mapleader = " "
 
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "
-nnoremap gm m
-nnoremap m d
-xnoremap m d
+" nnoremap gm m
+" nnoremap m d
+" xnoremap m d
 
-nnoremap mm dd
-nnoremap M D
+" nnoremap mm dd
+" nnoremap M D
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 nmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
@@ -355,6 +356,8 @@ nnoremap <space>im :TsuImport<cr>
 " autocmd BufWritePre *.js Neoformat
 " let g:EasyClipUseSubstituteDefaults = 1
 " let g:EasyClipUsePasteDefaults = 0
+let test#strategy = "neovim"
+let test#neovim#term_position = "vert"
 let g:yoinkIncludeDeleteOperations = 1
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
