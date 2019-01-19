@@ -5,6 +5,16 @@ call plug#begin('~/.vim/bundle')
 "
 "
 " Plug 'svermeulen/vim-cutlass'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'rakr/vim-two-firewatch'
+Plug 'wellle/targets.vim'
+Plug 'jonohrt/vim-NotableFt'
+" Plug 'justinmk/vim-sneak'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'radenling/vim-dispatch-neovim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-rbenv'
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'svermeulen/vim-yoink'
@@ -12,19 +22,19 @@ Plug 'svermeulen/vim-subversive'
 Plug 'romainl/vim-cool'
 Plug 'Chun-Yang/vim-textobj-chunk'
 Plug 'kana/vim-textobj-user'
-Plug 'ruanyl/vim-fixmyjs'
+" Plug 'ruanyl/vim-fixmyjs'
 Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'majutsushi/tagbar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 Plug 'sbdchd/neoformat'
 Plug 'snoe/nvim-parinfer.js'
-Plug 'dyng/ctrlsf.vim'
-Plug 'vim-scripts/ReplaceWithRegister'
-Plug 'sjl/gundo.vim'
+" Plug 'dyng/ctrlsfte.vim'
+" Plug 'vim-scriptste/ReplaceWithRegister'
+Plug 'git@github.com:sjl/gundo.vim.git'
 " Plug 'tomlion/vim-solidity'
 Plug 'mxw/vim-jsx'
 Plug 'ElmCast/elm-vim'
@@ -91,7 +101,7 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'isruslan/vim-es6'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-bundler'
@@ -100,6 +110,7 @@ Plug 'othree/html5.vim'
 Plug 'tpope/vim-rails'
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
+Plug 'tomasiser/vim-code-dark'
 
 " Linting
 " Plug 'benekastah/neomake'
@@ -134,6 +145,7 @@ let g:incsearch#auto_nohlsearch = 1
 set cmdheight=1
 " highlight current line
 set cursorline
+set cursorcolumn
 set ignorecase smartcase
 " Tab completion
 " will insert tab at beginning of line,
@@ -176,8 +188,9 @@ set splitright             " Open vertical splits to the right of the current pa
 set inccommand=nosplit     " Incrementally show effects of commands
 set clipboard=unnamed
 
+set spell spelllang=en_us
 " Set the location of the spellfile
-" set spellfile=~/.config/nvim/spelling/en.utf-8.add
+set spellfile=~/.config/nvim/spelling/en.utf-8.add
 
 
 set timeoutlen=1000 ttimeoutlen=0
@@ -203,17 +216,34 @@ let g:UltiSnipsEditSplit="vertical"
 let NERDTreeQuitOnOpen=1
 
 
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
-
+" same bindings for merging diffs as in normal mode
+xnoremap dp :diffput<cr>
+xnoremap do :diffget<cr>
+" fugitive git bindings
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gb :Git branch<Space>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gpl :Dispatch! git pull<CR>
 let g:elm_setup_keybindings = 1
 " Leader mappings
 let mapleader = " "
 
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 "
 " nnoremap gm m
 " nnoremap m d
@@ -222,16 +252,22 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " nnoremap mm dd
 " nnoremap M D
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-nmap <silent> t<C-n> :TestNearest<CR>
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map t <Plug>Sneak_t
+" map T <Plug>Sneak_Tnmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-a> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-augroup qs_colors
-  autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg=Yellow gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#888888' gui=underline ctermfg=81 cterm=underline
-augroup END
+" augroup qs_colors
+"   autocmd!
+"   autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+"   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+"   " autocmd ColorScheme * highlight QuickScopePrimary guifg=LightYellow gui=underline ctermfg=155 cterm=underline
+"   " autocmd ColorScheme * highlight QuickScopeSecondary guifg=DarkYellow gui=underline ctermfg=81 cterm=underline
+" augroup END
 
 autocmd VimEnter *
 \ command! -bang -nargs=* Ag
@@ -289,6 +325,8 @@ function! s:incsearch_config(...) abort
   \ }), get(a:, 1, {}))
 endfunction
 
+let g:EasyMotion_smartcase = 1
+
 noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
 noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
 noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
@@ -313,9 +351,9 @@ map g# <Plug>(incsearch-nohl-g#)
 
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
-map  <Leader>f1 <Plug>(easymotion-bd-f)
-nmap <Leader>f1 <Plug>(easymotion-overwin-f)
-nmap <leader>s <Plug>(easymotion-overwin-f2)
+map  <Leader>f2 <Plug>(easymotion-bd-f2)
+nmap <Leader>f2 <Plug>(easymotion-overwin-f2)
+nmap <leader>s <Plug>(easymotion-overwin-f)
 map  <Leader>fw <Plug>(easymotion-bd-w)
 nmap <Leader>fw <Plug>(easymotion-overwin-w)
 nmap <Leader>fil <Plug>(easymotion-sl)
@@ -436,14 +474,20 @@ let g:deoplete#enable_at_startup = 1
 
 let g:neosnippet#enable_completed_snippet = 1
 
+let ruby_spellcheck_strings = 1
 " ################## THEMES #################
-set guifont=SourceCodePro\ Nerd\ Font:h11
-set termguicolors
+
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+if !has("gui_vimr")
+  set guifont=SourceCodePro\ Nerd\ Font:h11
+endif
+set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-colorscheme onedark
-let g:airline_theme='onedark'
+" colorscheme codedark
+set background=dark
+colorscheme PaperColor
+let g:airline_theme='codedark'
 set encoding=utf8
 let g:airline_powerline_fonts = 1
 let g:onedark_terminal_italics = 1
