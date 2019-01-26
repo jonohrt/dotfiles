@@ -2,15 +2,15 @@
 call plug#begin('~/.vim/bundle')
 
 " GENERAL
-"
-"
-" Plug 'svermeulen/vim-cutlass'
-" Plug 'terryma/vim-multiple-cursors'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'tpope/vim-abolish'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'rakr/vim-two-firewatch'
 Plug 'wellle/targets.vim'
 Plug 'jonohrt/vim-NotableFt'
-" Plug 'justinmk/vim-sneak'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-dispatch'
@@ -22,34 +22,26 @@ Plug 'svermeulen/vim-subversive'
 Plug 'romainl/vim-cool'
 Plug 'Chun-Yang/vim-textobj-chunk'
 Plug 'kana/vim-textobj-user'
-" Plug 'ruanyl/vim-fixmyjs'
 Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'majutsushi/tagbar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
-" Plug 'unblevable/quick-scope'
 Plug 'git@github.com:tpope/vim-projectionist.git'
-Plug 'sbdchd/neoformat'
-Plug 'snoe/nvim-parinfer.js'
-" Plug 'dyng/ctrlsfte.vim'
-" Plug 'vim-scriptste/ReplaceWithRegister'
+" Plug 'sbdchd/neoformat'
+" Plug 'snoe/nvim-parinfer.js'
 Plug 'git@github.com:sjl/gundo.vim.git'
-" Plug 'tomlion/vim-solidity'
 Plug 'mxw/vim-jsx'
-Plug 'ElmCast/elm-vim'
+" Plug 'ElmCast/elm-vim'
 Plug 'flowtype/vim-flow'
-Plug 'wokalski/autocomplete-flow'
-" Plug 'Shougo/neosnippet'
-" Plug 'Shougo/neosnippet-snippets'
-Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'jceb/vim-hier'
+" Plug 'wokalski/autocomplete-flow'
+" Plug 'vim-scripts/AnsiEsc.vim'
+" Plug 'jceb/vim-hier'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
+" Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
 Plug 'mhartington/nvim-typescript'
-Plug 'tpope/vim-eunuch'
-Plug 'terryma/vim-smooth-scroll'
+" Plug 'terryma/vim-smooth-scroll'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/vitality.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -181,7 +173,7 @@ set autowrite              " Automatically :write before running commands
 set nojoinspaces           " Only join with one space after punctuation
 set nomodeline             " Turn off modelines
 set autoread               " Automatically read changes to files edited outside of Vim
-au CursorHold * checktime
+" au CursorHold * checktime
 set scrolloff=2            " Ensure there's always a little space above and below the current line
 set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
@@ -222,8 +214,8 @@ let NERDTreeQuitOnOpen=1
 
 " ########################### KEYBINDINGS ##############3
 " same bindings for merging diffs as in normal mode
-xnoremap dp :diffput<cr>
-xnoremap do :diffget<cr>
+xnoremap <leader>dp :diffput<cr>
+xnoremap <leader>do :diffget<cr>
 " fugitive git bindings
 nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gs :Gstatus<CR>
@@ -244,7 +236,7 @@ let g:elm_setup_keybindings = 1
 " Leader mappings
 let mapleader = " "
 
-"
+nmap yof :let b:ale_fix_on_save=0<CR>
 " nnoremap gm m
 " nnoremap m d
 " xnoremap m d
@@ -272,12 +264,11 @@ nmap <silent> t<C-g> :TestVisit<CR>
 autocmd VimEnter *
 \ command! -bang -nargs=* Ag
 \ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
-
 nnoremap <leader>w :w<cr>
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ deoplete#mappings#manual_complete()
+" inoremap <silent><expr> <TAB>
+"     \ pumvisible() ? "\<C-n>" :
+"     \ <SID>check_back_space() ? "\<TAB>" :
+"     \ deoplete#mappings#manual_complete()
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -351,9 +342,9 @@ map g# <Plug>(incsearch-nohl-g#)
 
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
-map  <Leader>f2 <Plug>(easymotion-bd-f2)
-nmap <Leader>f2 <Plug>(easymotion-overwin-f2)
-nmap <leader>s <Plug>(easymotion-overwin-f)
+map <Leader>s <Plug>(easymotion-bd-f)
+map  <Leader>d <Plug>(easymotion-bd-f2)
+nmap <Leader>d <Plug>(easymotion-overwin-f2)
 map  <Leader>fw <Plug>(easymotion-bd-w)
 nmap <Leader>fw <Plug>(easymotion-overwin-w)
 nmap <Leader>fil <Plug>(easymotion-sl)
@@ -375,20 +366,46 @@ nnoremap <Leader>n :NERDTreeToggle<cr>
 nnoremap <leader>k :bd<cr>
 nnoremap Y y$
 " nnoremap <up> :<up>
-nnoremap <silent> <Leader>df :call DiffToggle()<CR>
+" nnoremap <silent> <Leader>df :call DiffToggle()<CR>
 
-function! DiffToggle()
-    if &diff
-        diffoff
-    else
-        diffthis
-    endif
-:endfunction
+" function! DiffToggle()
+"     if &diff
+"         diffoff
+"     else
+"         diffthis
+"     endif
+" :endfunction
 
 
 nnoremap <space>im :TsuImport<cr>
 
 " ########################## SYNTAX #####################
+let g:LanguageClient_serverCommands = {
+      \ 'ruby': ['solargraph', 'stdio'],
+      \ 'javascript': ['javascript-typescript-stdio'],
+      \ 'javascript.jsx': ['javascript-typescript-stdio']
+      \ }
+let g:LanguageClient_autoStart=1
+let g:LanguageClient_autoStop=1
+
+" Rename - rn => rename
+noremap <leader>rn :call LanguageClient#textDocument_rename()<CR>
+
+" Rename - rc => rename camelCase
+noremap <leader>rc :call LanguageClient#textDocument_rename(
+            \ {'newName': Abolish.camelcase(expand('<cword>'))})<CR>
+
+" Rename - rs => rename snake_case
+noremap <leader>rs :call LanguageClient#textDocument_rename(
+            \ {'newName': Abolish.snakecase(expand('<cword>'))})<CR>
+
+" Rename - ru => rename UPPERCASE
+noremap <leader>ru :call LanguageClient#textDocument_rename(
+            \ {'newName': Abolish.uppercase(expand('<cword>'))})<CR>
+nnoremap <Leader>lm :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> <Leader>ld :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <Leader>lr :call LanguageClient#textDocument_references()<CR>
+
 " Configure Neomake
 " autocmd! BufWritePost,BufReadPost * Neomake
 " autocmd BufWritePre *.js Neoformat
@@ -414,8 +431,6 @@ set completeopt=longest,menuone,preview
 let g:ale_sign_warning='⚠'
 let g:ale_sign_error='✖'
 " let g:ale_sign_error='x'
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
@@ -424,13 +439,15 @@ let g:tsuquyomi_disable_quickfix = 1
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:ale_javascript_enabled_makers = ['eslint']
 let g:neomake_typescript_checkers = ['tsuquyomi', 'tslint'] " You shouldn't use 'tsc' checker.
-let g:ale_ruby_rubocop_executable = 'bin/rubocop'
+let g:ale_ruby_rubocop_executable = './bin/rubocop'
 let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'] }
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.ruby = ['rubocop']
+let g:ale_ruby_rubocop_options = ''
 let g:ale_fix_on_save = 1
-autocmd BufWrite *.rb ALEFix
+" let g:ale_history_log_output=1
+" autocmd BufWrite *.rb ALEFix
 " Prevent vim-json from concealing quotes
 " let g:vim_json_syntax_conceal = 0
 
@@ -460,14 +477,19 @@ set tabstop=2 shiftwidth=2 expandtab
 let g:is_posix = 1
 
 
+
+" deoplete
+"
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
   \ 'tern#Complete',
   \ 'jspc#omni'
 \]
-
-" deoplete
-
+ call deoplete#custom#option({
+    \ 'max_list': 20
+    \ })
 let g:deoplete#enable_at_startup = 1
 
 " neosnippet
@@ -495,5 +517,5 @@ hi CursorLineNr guifg=#6291E8
 hi Comment cterm=italic
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
-hi Search guibg=DarkRed guifg=wheat
+hi Search guibg=#b92c60 guifg=wheat
 highlight Comment gui=italic

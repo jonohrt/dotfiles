@@ -160,8 +160,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:/Users/jonohrt/Projects/gssl/kube
 export ONFIDO_API_KEY=test_RrixH0WC5PFMaTIkisZcYsbnu8CfRW8S
 # export DATABASE_URL=postgres://ufssjf6hl483bs:pfkt9u45cosat35er99mskdnl5m@ec2-52-55-241-220.compute-1.amazonaws.com:5432/d6nte8tnopamd1
 
+export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
 
-export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/jonohrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jonohrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -179,3 +179,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
+export PATH=./bin:$PATH

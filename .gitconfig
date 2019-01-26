@@ -3,6 +3,9 @@
 # Please adapt and uncomment the following lines:
 #	name = Jon Ohrt
 #	email = jonohrt1@gmail.com
+[alias]
+  # Mark a repo as trusted
+  trust = "!mkdir -p .git/safe"
 [user]
 	name = Jon Ohrt
 	email = jonohrt1@gmail.com
