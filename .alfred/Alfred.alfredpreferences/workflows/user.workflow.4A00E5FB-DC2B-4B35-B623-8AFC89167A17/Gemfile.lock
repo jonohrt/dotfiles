@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    CFPropertyList (2.2.0)
+    alfredo (0.1.2)
+      nokogiri
+    nokogiri (1.5.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  CFPropertyList
+  alfredo
