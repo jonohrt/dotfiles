@@ -129,7 +129,9 @@ set secure
 filetype plugin indent on
 set smartindent
 
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore .vscode -g ""'
+" let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore .vscode -g ""'
+" let FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 set shell=zsh
 set diffopt+=vertical
 let g:incsearch#auto_nohlsearch = 1
@@ -261,9 +263,9 @@ nmap <silent> t<C-g> :TestVisit<CR>
 "   " autocmd ColorScheme * highlight QuickScopeSecondary guifg=DarkYellow gui=underline ctermfg=81 cterm=underline
 " augroup END
 
-autocmd VimEnter *
-\ command! -bang -nargs=* Ag
-\ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
+" autocmd VimEnter *
+" \ command! -bang -nargs=* Ag
+" \ call fzf#vim#ag(<q-args>, '', { 'options': '--bind ctrl-a:select-all,ctrl-d:deselect-all' }, <bang>0)
 nnoremap <leader>w :w<cr>
 " inoremap <silent><expr> <TAB>
 "     \ pumvisible() ? "\<C-n>" :
@@ -289,7 +291,7 @@ nmap <silent> <leader>aj <Plug>(ale_next_wrap)
 
 nnoremap <leader>o :Files<cr>
 nnoremap <leader>p :Buffers<cr>
-nnoremap <leader>fa :Ag<space>
+nnoremap <leader>fa :Rg<space>
 
 
 " Map ✠ (U+2720) to <S-CR>, so we have <S-CR> mapped to ✠ in iTerm2 and
