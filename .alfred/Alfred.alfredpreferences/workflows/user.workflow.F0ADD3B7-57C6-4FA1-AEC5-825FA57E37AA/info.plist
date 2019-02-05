@@ -33,14 +33,12 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Kill Process v1.2.0</string>
+	<string>Kill Process v1.2</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -64,14 +62,6 @@
 				<integer>0</integer>
 				<key>keyword</key>
 				<string>kill</string>
-				<key>queuedelaycustom</key>
-				<integer>1</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Finding processes...</string>
 				<key>script</key>
@@ -148,8 +138,6 @@ puts xmlString</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
