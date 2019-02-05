@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "javascript-typescript-langserver": "^2.11.2"
+  }
+}

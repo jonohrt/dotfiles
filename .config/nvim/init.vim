@@ -80,7 +80,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-endwise'
 " Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 "
 " Language syntax highlighting
 " Plug 'digitaltoad/vim-pug'
@@ -289,9 +289,6 @@ nnoremap ^ 0
 nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
 nmap <silent> <leader>aj <Plug>(ale_next_wrap)
 
-nnoremap <leader>o :Files<cr>
-nnoremap <leader>p :Buffers<cr>
-nnoremap <leader>fa :Rg<space>
 
 
 " Map ✠ (U+2720) to <S-CR>, so we have <S-CR> mapped to ✠ in iTerm2 and
@@ -353,10 +350,14 @@ nmap <Leader>fil <Plug>(easymotion-sl)
 nmap <Leader>fiw <Plug>(easymotion-bd-wl)
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
+nnoremap <leader>o :Files<cr>
+nnoremap <leader>[ :GFiles<cr>
+nnoremap <leader>p :Buffers<cr>
+nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
 nnoremap <leader>fc :Commits<cr>
 nnoremap <leader>fcc :BCommits<cr>
-nnoremap <leader>fg :GFiles?<cr>
+nnoremap <leader>] :GFiles?<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>f: :History:<cr>
 nnoremap <leader>f/ :History/<cr>
