@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.schlosser.hidden-files</string>
+	<key>connections</key>
+	<dict>
+		<key>96DA5626-7DBD-4965-B222-F3302A8936DA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4C8C7585-B733-44A8-B91B-FF7068B6D908</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C234CE03-B63C-4DE9-80CF-C5A842817AD2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>82070E14-B68A-46DC-8D51-8BEF73B88926</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F29CA7D0-E36D-49A4-A765-DEF00A0B011D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>338B5FD4-CF6D-4000-97D9-D9E3E48F7E33</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Dan Schlosser</string>
+	<key>description</key>
+	<string>Show/Hide all hidden files in finder</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Show Hidden Files</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
+
+defaults write com.apple.finder AppleShowAllFiles TRUE
+
+killall Finder</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>338B5FD4-CF6D-4000-97D9-D9E3E48F7E33</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>showfiles</string>
+				<key>subtext</key>
+				<string>Show all files and folders in Finder</string>
+				<key>text</key>
+				<string>Show All</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F29CA7D0-E36D-49A4-A765-DEF00A0B011D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>hidefiles</string>
+				<key>subtext</key>
+				<string>Hide all hidden files and folders in Finder</string>
+				<key>text</key>
+				<string>Hide Files</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C234CE03-B63C-4DE9-80CF-C5A842817AD2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
+
+defaults write com.apple.finder AppleShowAllFiles FALSE
+
+killall Finder</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>82070E14-B68A-46DC-8D51-8BEF73B88926</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>togglefiles</string>
+				<key>subtext</key>
+				<string>Toggle hiding hidden files in Finder</string>
+				<key>text</key>
+				<string>Toggle Show/Hide Hidden Files</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>96DA5626-7DBD-4965-B222-F3302A8936DA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string># http://osxdaily.com/2009/02/25/show-hidden-files-in-os-x/
+
+if [ $(defaults read com.apple.finder AppleShowAllFiles) = "TRUE" ]
+then
+	defaults write com.apple.finder AppleShowAllFiles FALSE
+	killall Finder
+elif [ $(defaults read com.apple.finder AppleShowAllFiles) = "FALSE" ]
+then
+	defaults write com.apple.finder AppleShowAllFiles TRUE
+	killall Finder
+fi</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4C8C7585-B733-44A8-B91B-FF7068B6D908</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>338B5FD4-CF6D-4000-97D9-D9E3E48F7E33</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>4C8C7585-B733-44A8-B91B-FF7068B6D908</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>82070E14-B68A-46DC-8D51-8BEF73B88926</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>96DA5626-7DBD-4965-B222-F3302A8936DA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>C234CE03-B63C-4DE9-80CF-C5A842817AD2</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>F29CA7D0-E36D-49A4-A765-DEF00A0B011D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://schlosser.io</string>
+</dict>
+</plist>
