@@ -32,7 +32,7 @@ bindkey '^Z' fancy-ctrl-z
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
 export NVM_DIR="$HOME/.nvm"
   . "/usr/local/opt/nvm/nvm.sh"
 
@@ -164,12 +164,6 @@ export ONFIDO_API_KEY=test_RrixH0WC5PFMaTIkisZcYsbnu8CfRW8S
 export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jonohrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jonohrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/jonohrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/jonohrt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 # Start rbenv
 eval "$(rbenv init -)"
 
@@ -182,3 +176,9 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export PATH=./bin:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/johrt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/johrt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/google-cloud-sdk/completion.zsh.inc'; fi
