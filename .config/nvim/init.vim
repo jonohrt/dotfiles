@@ -382,11 +382,22 @@ nnoremap Y y$
 
 nnoremap <space>im :TsuImport<cr>
 
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
+
 " ########################## SYNTAX #####################
 let g:LanguageClient_serverCommands = {
       \ 'ruby': ['solargraph', 'stdio'],
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio']
       \ }
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_autoStop=1
@@ -443,6 +454,7 @@ let g:neomake_jsx_enabled_makers = ['eslint']
 let g:ale_javascript_enabled_makers = ['eslint']
 let g:neomake_typescript_checkers = ['tsuquyomi', 'tslint'] " You shouldn't use 'tsc' checker.
 let g:ale_ruby_rubocop_executable = './bin/rubocop'
+let g:ale_javascript_eslint_executable = 'yarn eslint'
 let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'] }
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = ['eslint']
@@ -484,7 +496,7 @@ let g:is_posix = 1
 " deoplete
 "
 let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips']
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
   \ 'tern#Complete',
