@@ -12,7 +12,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'radenling/vim-dispatch-neovim'
+" Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
 Plug 'https://github.com/adelarsq/vim-matchit'
@@ -30,7 +30,8 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 " Plug 'sbdchd/neoformat'
 " Plug 'snoe/nvim-parinfer.js'
-Plug 'git@github.com:sjl/gundo.vim.git'
+Plug 'mbbill/undotree'
+
 Plug 'mxw/vim-jsx'
 " Plug 'ElmCast/elm-vim'
 Plug 'flowtype/vim-flow'
@@ -61,7 +62,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'w0rp/ale'
 Plug 'Quramy/vim-js-pretty-template'
 " Plug 'vim-syntastic/syntastic'
@@ -80,7 +81,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-endwise'
 " Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 "
 " Language syntax highlighting
 " Plug 'digitaltoad/vim-pug'
@@ -139,7 +140,7 @@ let g:incsearch#auto_nohlsearch = 1
 set cmdheight=1
 " highlight current line
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set ignorecase smartcase
 " Tab completion
 " will insert tab at beginning of line,
@@ -215,6 +216,8 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
+nnoremap <space>u :UndotreeToggle<cr>
+let g:undotree_SetFocusWhenToggle = 1
 " same bindings for merging diffs as in normal mode
 xnoremap <leader>dp :diffput<cr>
 xnoremap <leader>do :diffget<cr>
@@ -247,10 +250,6 @@ nmap yof :let b:ale_fix_on_save=0<CR>
 " nnoremap M D
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 " let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_Tnmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-a> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
@@ -385,9 +384,12 @@ nnoremap <space>im :TsuImport<cr>
 " ########################## SYNTAX #####################
 let g:LanguageClient_serverCommands = {
       \ 'ruby': ['solargraph', 'stdio'],
-      \ 'javascript': ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio']
+      \ 'javascript.jsx': ['js-langserver', '--stdio'],
+      \ 'javascript': ['js-langserver', '--stdio']
       \ }
+" \ 'javascript': ['javascript-typescript-stdio'],
+" \ 'javascript.jsx': ['javascript-typescript-stdio']
+" \ }
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_autoStop=1
 
@@ -414,7 +416,9 @@ nnoremap <silent> <Leader>lr :call LanguageClient#textDocument_references()<CR>
 " autocmd BufWritePre *.js Neoformat
 " let g:EasyClipUseSubstituteDefaults = 1
 " let g:EasyClipUsePasteDefaults = 0
-let test#strategy = "neovim"
+let g:test#strategy = 'neomake'
+let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+let g:neomake_open_list = 2
 let test#neovim#term_position = "vert"
 let g:yoinkIncludeDeleteOperations = 1
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
