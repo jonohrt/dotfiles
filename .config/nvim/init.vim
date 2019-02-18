@@ -12,7 +12,6 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'radenling/vim-dispatch-neovim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
 Plug 'https://github.com/adelarsq/vim-matchit'
@@ -24,16 +23,15 @@ Plug 'Chun-Yang/vim-textobj-chunk'
 Plug 'kana/vim-textobj-user'
 Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
-Plug 'majutsushi/tagbar'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 " Plug 'sbdchd/neoformat'
 " Plug 'snoe/nvim-parinfer.js'
-Plug 'git@github.com:sjl/gundo.vim.git'
+Plug 'mbbill/undotree'
+
 Plug 'mxw/vim-jsx'
 " Plug 'ElmCast/elm-vim'
-Plug 'flowtype/vim-flow'
 " Plug 'wokalski/autocomplete-flow'
 " Plug 'vim-scripts/AnsiEsc.vim'
 " Plug 'jceb/vim-hier'
@@ -61,7 +59,7 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'w0rp/ale'
 Plug 'Quramy/vim-js-pretty-template'
 " Plug 'vim-syntastic/syntastic'
@@ -80,7 +78,7 @@ Plug 'airblade/vim-rooter'
 Plug 'tpope/vim-endwise'
 " Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 "
 " Language syntax highlighting
 " Plug 'digitaltoad/vim-pug'
@@ -89,7 +87,7 @@ Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 
-Plug 'jaxbot/semantic-highlight.vim'
+" Plug 'jaxbot/semantic-highlight.vim'
 Plug 'isruslan/vim-es6'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -139,13 +137,14 @@ let g:incsearch#auto_nohlsearch = 1
 set cmdheight=1
 " highlight current line
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set ignorecase smartcase
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
 set wildmode=longest,list
 
+set mouse=nv
 " Columns
 set textwidth=100          " The maximum width of the text being inserted
 set linebreak              " Wrap characters at the breakat point rather than the edge of the screen
@@ -215,6 +214,8 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
+nnoremap <space>u :UndotreeToggle<cr>
+let g:undotree_SetFocusWhenToggle = 1
 " same bindings for merging diffs as in normal mode
 xnoremap <leader>dp :diffput<cr>
 xnoremap <leader>do :diffget<cr>
@@ -247,10 +248,6 @@ nmap yof :let b:ale_fix_on_save=0<CR>
 " nnoremap M D
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 " let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map t <Plug>Sneak_t
-" map T <Plug>Sneak_Tnmap <silent> t<C-n> :TestNearest<CR>
 nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-a> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
@@ -282,8 +279,8 @@ endfunction"}}}
 
 tnoremap <C-n> <C-\><C-n>
 
-nnoremap <C-j> 10j
-nnoremap <C-k> 10k
+" nnoremap <C-j> 10j
+" nnoremap <C-k> 10k
 nnoremap 0 ^
 nnoremap ^ 0
 nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
@@ -382,23 +379,26 @@ nnoremap Y y$
 
 nnoremap <space>im :TsuImport<cr>
 
-function s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-        let dir=fnamemodify(a:file, ':h')
-        if !isdirectory(dir)
-            call mkdir(dir, 'p')
-        endif
-    endif
-endfunction
-augroup BWCCreateDir
-    autocmd!
-    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-augroup END
+" function s:MkNonExDir(file, buf)
+"     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+"         let dir=fnamemodify(a:file, ':h')
+"         if !isdirectory(dir)
+"             call mkdir(dir, 'p')
+"         endif
+"     endif
+" endfunction
+" augroup BWCCreateDir
+"     autocmd!
+"     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+" augroup END
 
 " ########################## SYNTAX #####################
 let g:LanguageClient_serverCommands = {
       \ 'ruby': ['solargraph', 'stdio'],
       \ }
+" \ 'javascript': ['javascript-typescript-stdio'],
+" \ 'javascript.jsx': ['javascript-typescript-stdio']
+" \ }
 let g:LanguageClient_autoStart=1
 let g:LanguageClient_autoStop=1
 
@@ -425,7 +425,13 @@ nnoremap <silent> <Leader>lr :call LanguageClient#textDocument_references()<CR>
 " autocmd BufWritePre *.js Neoformat
 " let g:EasyClipUseSubstituteDefaults = 1
 " let g:EasyClipUsePasteDefaults = 0
-let test#strategy = "neovim"
+let g:test#strategy = 'neomake'
+let g:test#javascript#jest#options = '--reporters jest-vim-reporter'
+let g:async_make_green_success_prefix = ' ✓ '
+let g:async_make_green_failure_prefix = ' ✖ '
+let g:async_make_green_default_success_text = 'All tests passed'
+let g:async_make_green_use_make_output_on_success = 0
+let g:neomake_open_list = 2
 let test#neovim#term_position = "vert"
 let g:yoinkIncludeDeleteOperations = 1
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
@@ -503,7 +509,7 @@ let g:deoplete#omni#functions.javascript = [
   \ 'jspc#omni'
 \]
  call deoplete#custom#option({
-    \ 'max_list': 20
+    \ 'max_list': 50
     \ })
 let g:deoplete#enable_at_startup = 1
 
@@ -534,3 +540,62 @@ hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 hi Search guibg=#b92c60 guifg=wheat
 highlight Comment gui=italic
+call airline#parts#define_function('foo', 'SpinnerText')
+let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
+
+
+let s:spinner_index = 0
+let s:active_spinners = 0
+" let s:spinner_states = ['┤', '┘', '┴', '└', '├', '┌', '┬', '┐']
+" let s:spinner_states = ['┤', '┘', '┴', '└', '├', '┌', '┬', '┐']
+" let s:spinner_states = ['←', '↑', '→', '↓']
+" let s:spinner_states = ['d', 'q', 'p', 'b']
+" let s:spinner_states = ['.', 'o', 'O', '°', 'O', 'o', '.']
+" let s:spinner_states = ['■', '□', '▪', '▫', '▪', '□', '■']
+" let s:spinner_states = ['|', '/', '--', '\', '|', '/', '--', '\']
+let s:spinner_states = ['←', '↖', '↑', '↗', '→', '↘', '↓', '↙']
+
+function! StartSpinner()
+    let b:show_spinner = 1
+    let s:active_spinners += 1
+    if s:active_spinners == 1
+        let s:spinner_timer = timer_start(1000 / len(s:spinner_states), 'SpinSpinner', {'repeat': -1})
+    endif
+endfunction
+
+function! StopSpinner()
+    let b:show_spinner = 0
+    let s:active_spinners -= 1
+    if s:active_spinners == 0
+        :call timer_stop(s:spinner_timer)
+    endif
+endfunction
+
+function! SpinSpinner(timer)
+    let s:spinner_index = float2nr(fmod(s:spinner_index + 1, len(s:spinner_states)))
+    redraw
+endfunction
+
+function! SpinnerText()
+    if get(b:, 'show_spinner', 0) == 0
+        return " "
+    endif
+
+    return s:spinner_states[s:spinner_index]
+endfunction
+
+augroup neomake_hooks
+    au!
+    autocmd User NeomakeJobInit :call StartSpinner()
+    autocmd User NeomakeJobInit :echom "Build started"
+    autocmd User NeomakeFinished :call StopSpinner()
+    autocmd User NeomakeFinished :echom "Build complete"
+augroup END
+
+
+augroup test
+  autocmd!
+  autocmd BufWrite * if test#exists() |
+    \   TestFile |
+    \ endif
+augroup END
