@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/johrt/.nvm/versions/node/v10.14.1/bin/node /usr/local/Cellar/yarn/1.15.2/libexec/bin/yarn.js add tsserver --ignore-engines
+
+PATH: 
+  /Users/johrt/google-cloud-sdk/bin:./bin:/Users/johrt/.nvm/versions/node/v10.14.1/bin:/Users/johrt/.rbenv/shims:/Users/jonohrt/bin:/usr/local/bin:/Users/johrt/go/bin:/Users/johrt/.cargo/bin:/Users/johrt/.bin:/Users/johrt/.nvm/versions/node/v10.14.1/bin:/Users/johrt/.nvm/versions/node/v10.14.1/bin:/Users/johrt/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/johrt/google-cloud-sdk/bin:./bin:/Users/johrt/.nvm/versions/node/v10.14.1/bin:/Users/johrt/.rbenv/shims:/Users/jonohrt/bin:/Users/johrt/go/bin:/Users/johrt/.cargo/bin:/Users/johrt/.bin:/usr/local/opt/fzf/bin:/Users/johrt/Library/Python/3.6/bin:/Users/johrt/Library/Android/sdk/tools:/Users/johrt/Library/Android/sdk/platform-tools:/Users/jonohrt/Projects/gssl/kubernetes/client/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin:/Users/johrt/Library/Python/3.6/bin:/Users/johrt/Library/Android/sdk/tools:/Users/johrt/Library/Android/sdk/platform-tools:/Users/jonohrt/Projects/gssl/kubernetes/client/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  10.14.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/tsserver: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:66058:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:129541:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:130513:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.15.2/libexec/lib/cli.js:130435:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1094:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {"dependencies":{}}
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
