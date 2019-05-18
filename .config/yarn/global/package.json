@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "babel-eslint": "^10.0.1",
-    "javascript-typescript-langserver": "^2.11.2"
-  }
-}
