@@ -140,6 +140,7 @@ alias -g list-ports='sudo lsof -PiTCP -sTCP:LISTEN'
 alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gpo='git pull origin'
 alias gc="git checkout"
+
 alias gcb='git checkout -b'
 
 # Add autocomplete to the custom tmux functions.
@@ -182,3 +183,15 @@ if [ -f '/Users/johrt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/johrt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Tesla project shortcuts
+alias @tesla='cd $HOME/Projects/tesla'
+alias @adapter='cd $HOME/Projects/tesla/projects/tesla-adapter'
+alias @auth='cd $HOME/Projects/tesla/projects/tesla-auth'
+alias @data-point='cd $HOME/Projects/tesla/projects/tesla-data-point'
+alias @deployment='cd $HOME/Projects/tesla/projects/tesla-deployment'
+alias @permission='cd $HOME/Projects/tesla/projects/tesla-permission'
+alias @proxy='cd $HOME/Projects/tesla/projects/tesla-proxy'
+alias @site='cd $HOME/Projects/tesla/projects/tesla-site'
+alias @ui='cd $HOME/Projects/tesla/projects/tesla-ui'
+alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'

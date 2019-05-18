@@ -2,13 +2,14 @@
 call plug#begin('~/.vim/bundle')
 
 " GENERAL
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
-Plug 'ternjs/tern_for_vim'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'ternjs/tern_for_vim'
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 Plug 'tpope/vim-abolish'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
@@ -60,7 +61,7 @@ Plug 'tpope/vim-rhubarb'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neomake/neomake'
 Plug 'w0rp/ale'
 Plug 'Quramy/vim-js-pretty-template'
@@ -284,8 +285,8 @@ tnoremap <C-n> <C-\><C-n>
 " nnoremap <C-k> 10k
 nnoremap 0 ^
 nnoremap ^ 0
-nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
-nmap <silent> <leader>aj <Plug>(ale_next_wrap)
+nmap <silent> [i <Plug>(ale_previous_wrap)
+nmap <silent> ]i <Plug>(ale_next_wrap)
 
 
 
@@ -465,65 +466,65 @@ let g:ale_sign_error='✖'
 "  call deoplete#custom#option({
 "     \ 'max_list': 20
 "     \ })
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 
 " " neosnippet
 
 " let g:neosnippet#enable_completed_snippet = 1
 " let g:deoplete#sources#ternjs#tern_bin = '/usr/local/bin/tern'
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
+" let g:tern#command = ['tern']
+" let g:tern#arguments = ['--persistent']
 " Whether to include the types of the completions in the result data. Default: 0
-let g:deoplete#sources#ternjs#types = 1
+" let g:deoplete#sources#ternjs#types = 1
 
 " Whether to include the distance (in scopes for variables, in prototypes for
 " properties) between the completions and the origin position in the result
 " data. Default: 0
-let g:deoplete#sources#ternjs#depths = 1
+" let g:deoplete#sources#ternjs#depths = 1
 
 " Whether to include documentation strings (if found) in the result data.
 " Default: 0
-let g:deoplete#sources#ternjs#docs = 0
+" let g:deoplete#sources#ternjs#docs = 0
 
 " When on, only completions that match the current word at the given point will
 " be returned. Turn this off to get all results, so that you can filter on the
 " client side. Default: 1
-let g:deoplete#sources#ternjs#filter = 0
+" let g:deoplete#sources#ternjs#filter = 0
 
 " Whether to use a case-insensitive compare between the current word and
 " potential completions. Default 0
-let g:deoplete#sources#ternjs#case_insensitive = 1
+" let g:deoplete#sources#ternjs#case_insensitive = 1
 
 " When completing a property and no completions are found, Tern will use some
 " heuristics to try and return some properties anyway. Set this to 0 to
 " turn that off. Default: 1
-let g:deoplete#sources#ternjs#guess = 1
+" let g:deoplete#sources#ternjs#guess = 1
 
 " Determines whether the result set will be sorted. Default: 1
-let g:deoplete#sources#ternjs#sort = 0
+" let g:deoplete#sources#ternjs#sort = 0
 
 " When disabled, only the text before the given position is considered part of
 " the word. When enabled (the default), the whole variable name that the cursor
 " is on will be included. Default: 1
-let g:deoplete#sources#ternjs#expand_word_forward = 0
+" let g:deoplete#sources#ternjs#expand_word_forward = 0
 
 " Whether to ignore the properties of Object.prototype unless they have been
 " spelled out by at least two characters. Default: 1
-let g:deoplete#sources#ternjs#omit_object_prototype = 0
+" let g:deoplete#sources#ternjs#omit_object_prototype = 0
 
 " Whether to include JavaScript keywords when completing something that is not
 " a property. Default: 0
-let g:deoplete#sources#ternjs#include_keywords = 1
+" let g:deoplete#sources#ternjs#include_keywords = 1
 
 " If completions should be returned when inside a literal. Default: 1
-let g:deoplete#sources#ternjs#in_literal = 0
+" let g:deoplete#sources#ternjs#in_literal = 0
 
 
 "Add extra filetypes
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx'
-                \ ]
+" let g:deoplete#sources#ternjs#filetypes = [
+"                 \ 'jsx',
+"                 \ 'javascript.jsx'
+"                 \ ]
 
 
 let g:flownenable=0
@@ -570,6 +571,48 @@ set tabstop=2 shiftwidth=2 expandtab
 let g:is_posix = 1
 
 let ruby_spellcheck_strings = 1
+
+
+""""""""""""""""""'" COC Config
+
+" Use `[c` and `]c` for navigate diagnostics
+nmap <silent> [c <Plug>(coc-diagnostic-prev)
+nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <Leader> gd <Plug>(coc-definition)
+nmap <Leader> gy <Plug>(coc-type-definition)
+nmap <Leader> gi <Plug>(coc-implementation)
+nmap <Leader> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Better display for messages
+set cmdheight=2
+
+" Smaller updatetime for CursorHold & CursorHoldI
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
 " ################## THEMES #################
 
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
