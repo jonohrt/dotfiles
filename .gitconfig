@@ -66,11 +66,6 @@
   tool = Kaleidoscope
 [core]
   excludesfile = /Users/johrt/.gitignore_global
-[push]
-  default = current
-  followTags = true
-[branch]
-  autoSetupMerge = always
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =
