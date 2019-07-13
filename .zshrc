@@ -15,8 +15,12 @@ setopt NO_FLOW_CONTROL
 export TERM='xterm-256color-italic';
 bindkey -v
 # 10ms for key sequences
-KEYTIMEOUT=1
+export KEYTIMEOUT=1
 bindkey -M vicmd '^[' undefined-key
+
+MODE_CURSOR_VICMD="green block"
+MODE_CURSOR_VIINS="#20d08a blinking bar"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -33,9 +37,6 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -150,10 +151,7 @@ compctl -K tmux-sessions-autofill tk
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-export NVM_DIR="$HOME/.nvm"
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:$PATH:$HOME/Library/Python/3.6/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -171,18 +169,9 @@ eval "$(rbenv init -)"
 #Start direnv
 eval "$(direnv hook zsh)"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 export PATH=./bin:$PATH
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/johrt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/johrt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Tesla project shortcuts
 alias @tesla='cd $HOME/Projects/tesla'
@@ -195,3 +184,13 @@ alias @proxy='cd $HOME/Projects/tesla/projects/tesla-proxy'
 alias @site='cd $HOME/Projects/tesla/projects/tesla-site'
 alias @ui='cd $HOME/Projects/tesla/projects/tesla-ui'
 alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion

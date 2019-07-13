@@ -1,8 +1,11 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Jon Ohrt
+  name = Jon Ohrt
   email = jonohrt1@gmail.com
+
+[status]
+  showUntrackedFiles = all
 
 [alias]
   st = status
