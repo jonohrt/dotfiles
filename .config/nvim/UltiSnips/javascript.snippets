@@ -1,0 +1,17 @@
+snippet desc "Jest - describe(name, fn)"
+describe("$1", () => {
+	${VISUAL}$0
+});
+endsnippet
+
+snippet it "Jest - alias for test()"
+it("$1", () => {
+	$2
+});
+endsnippet
+
+snippet bef "Jest - before()"
+beforeEach(() => {
+	${VISUAL}$0
+});
+endsnippet

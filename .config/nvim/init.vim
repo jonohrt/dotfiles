@@ -1,8 +1,9 @@
+filetype plugin indent on
 " #################### PLUGINS #############
 call plug#begin('~/.vim/bundle')
-
 " GENERAL
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 " Plug 'ternjs/tern_for_vim'
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -46,7 +47,7 @@ Plug 'mhartington/nvim-typescript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/vitality.vim'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'myusuf3/numbers.vim'
+Plug 'ericbn/vim-relativize'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -127,19 +128,18 @@ set nocompatible
 set hidden
 set exrc
 set secure
-filetype plugin indent on
 set smartindent
 
 " let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore .vscode -g ""'
-" let FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" -g "!coverage/*"'
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" -g "!coverage/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 set shell=zsh
 set diffopt+=vertical
 let g:incsearch#auto_nohlsearch = 1
 "Stop quickfix prompt for large messages at the cost of less editing room
 set cmdheight=1
 " highlight current line
-set cursorline
+" set cursorline
 " set cursorcolumn
 set ignorecase smartcase
 " Tab completion
@@ -203,7 +203,8 @@ augroup myvimrc
     au BufWritePost *.vim,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-let g:UltiSnipsSnippetDirectories = ['/Users/johrt/.vim/UltiSnips', 'UltiSnips']
+" let g:UltiSnipsSnippetsDir='~/.config/nvim'
+" let g:UltiSnipsSnippetDirectories = 'UltiSnips'
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-x>"
@@ -216,6 +217,8 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
+
+autocmd VimEnter * nnoremap yon :RelativizeToggle<cr>
 nnoremap <space>u :UndotreeToggle<cr>
 let g:undotree_SetFocusWhenToggle = 1
 " same bindings for merging diffs as in normal mode
@@ -241,6 +244,8 @@ let g:elm_setup_keybindings = 1
 " Leader mappings
 let mapleader = " "
 
+nnoremap <space>nd :NeomakeDisable<cr>
+nnoremap <space>ne :NeomakeEnable<cr>
 nmap yof :let b:ale_fix_on_save=0<CR>
 " nnoremap gm m
 " nnoremap m d
@@ -633,7 +638,7 @@ hi CursorLineNr guifg=#6291E8
 hi Comment cterm=italic
 hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
-hi Search guibg=#b92c60 guifg=wheat
+hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
