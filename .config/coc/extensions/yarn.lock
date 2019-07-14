@@ -21,14 +21,10 @@ coc-json@^1.0.17:
     vscode-languageserver "^5.3.0-next.6"
     vscode-uri "^1.0.6"
 
-coc-solargraph@^1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/coc-solargraph/-/coc-solargraph-1.0.7.tgz#7b87eb8130bce3626ec2c7e8bdccae02cda7c2e2"
-  integrity sha512-9q2nIBArbJkL9nvs1hmlefQDe/BI7ku5TdSJsWJ7Fn2OVPKr+ppmwz8OYiwsTQ/zhvK8immWWjH0t2Q9K8YC8g==
-  dependencies:
-    tslib "^1.9.3"
-    vscode-languageserver-protocol "^3.13.0"
-    which "^1.3.1"
+coc-solargraph@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/coc-solargraph/-/coc-solargraph-1.1.2.tgz#8ca580495de63d3157c260f642a37f4d3fd37c50"
+  integrity sha512-Cmh5zrp7paE+rIR8ogHDJBsPjzpB0yg0RfZT195WVwsV2leCkVvrCIhNTXUi9CV2XKOkIkXAONZ7EbAsySCHdg==
 
 coc-tsserver@^1.2.1:
   version "1.2.1"
@@ -201,14 +197,6 @@ vscode-languageserver-protocol@3.15.0-next.5:
   dependencies:
     vscode-jsonrpc "^4.1.0-next.2"
     vscode-languageserver-types "3.15.0-next.1"
-
-vscode-languageserver-protocol@^3.13.0:
-  version "3.14.1"
-  resolved "https://registry.yarnpkg.com/vscode-languageserver-protocol/-/vscode-languageserver-protocol-3.14.1.tgz#b8aab6afae2849c84a8983d39a1cf742417afe2f"
-  integrity sha512-IL66BLb2g20uIKog5Y2dQ0IiigW0XKrvmWiOvc0yXw80z3tMEzEnHjaGAb3ENuU7MnQqgnYJ1Cl2l9RvNgDi4g==
-  dependencies:
-    vscode-jsonrpc "^4.0.0"
-    vscode-languageserver-types "3.14.0"
 
 vscode-languageserver-protocol@^3.15.0-next.1:
   version "3.15.0-next.1"

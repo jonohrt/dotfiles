@@ -1,8 +1,8 @@
 filetype plugin indent on
 " #################### PLUGINS #############
 call plug#begin('~/.vim/bundle')
-" GENERAL
-" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" " GENERAL
+" " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 " Plug 'ternjs/tern_for_vim'
@@ -12,33 +12,30 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 "     \ 'do': 'bash install.sh',
 "     \ }
 Plug 'tpope/vim-abolish'
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'thinca/vim-textobj-function-javascript'
+" Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
 Plug 'https://github.com/adelarsq/vim-matchit'
-Plug 'nelstrom/vim-textobj-rubyblock'
+" Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'svermeulen/vim-yoink'
 Plug 'svermeulen/vim-subversive'
-Plug 'romainl/vim-cool'
-Plug 'Chun-Yang/vim-textobj-chunk'
-Plug 'kana/vim-textobj-user'
+" Plug 'romainl/vim-cool'
+" Plug 'Chun-Yang/vim-textobj-chunk'
+" Plug 'kana/vim-textobj-user'
 Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
+" Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 " Plug 'sbdchd/neoformat'
 " Plug 'snoe/nvim-parinfer.js'
 Plug 'mbbill/undotree'
 
 Plug 'mxw/vim-jsx'
-" Plug 'ElmCast/elm-vim'
-" Plug 'wokalski/autocomplete-flow'
-" Plug 'vim-scripts/AnsiEsc.vim'
-" Plug 'jceb/vim-hier'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
@@ -71,9 +68,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 " Plug 'ervandew/supertab'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Sets the project root to the current Git repository by default
@@ -195,6 +193,9 @@ set timeoutlen=1000 ttimeoutlen=0
 set dictionary+=/usr/share/dict/words
 let g:tcommentMapLeaderOp1 ="/<space>"
 
+" let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB'
+let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB rr ll rb al rB Al bb aa bB Aa BB AA'
+
 "removing spaces on save
 autocmd BufWritePre * %s/\s\+$//e
 
@@ -217,6 +218,14 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+autocmd VimEnter * map <Leader>/ <Plug>(incsearch-fuzzy-/)
+autocmd VimEnter * map <Leader>? <Plug>(incsearch-fuzzy-?)
+autocmd VimEnter * map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
+
+nnoremap <expr> g<c-v> '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 autocmd VimEnter * nnoremap yon :RelativizeToggle<cr>
 nnoremap <space>u :UndotreeToggle<cr>
@@ -306,24 +315,24 @@ nnoremap <leader><leader> :noh<CR>
 nnoremap <leader>c gc
 
 
-" You can use other keymappings like <C-l> instead of <CR> if you want to
-" use these mappings as default search and somtimes want to move cursor with
-" EasyMotion.
-function! s:incsearch_config(...) abort
-  return incsearch#util#deepextend(deepcopy({
-  \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-  \   'keymap': {
-  \     "\<C-l>": '<Over>(easymotion)'
-  \   },
-  \   'is_expr': 0
-  \ }), get(a:, 1, {}))
-endfunction
+" " " You can use other keymappings like <C-l> instead of <CR> if you want to
+" " " use these mappings as default search and somtimes want to move cursor with
+" " " EasyMotion.
+" function! s:incsearch_config(...) abort
+"   return incsearch#util#deepextend(deepcopy({
+"   \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+"   \   'keymap': {
+"   \     "\<C-l>": '<Over>(easymotion)'
+"   \   },
+"   \   'is_expr': 0
+"   \ }), get(a:, 1, {}))
+" endfunction
 
-let g:EasyMotion_smartcase = 1
+" " let g:EasyMotion_smartcase = 1
 
-noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
-noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
-noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
+" noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
+" noremap <silent><expr> ?  incsearch#go(<SID>incsearch_config({'command': '?'}))
+" noremap <silent><expr> g/ incsearch#go(<SID>incsearch_config({'is_stay': 1}))
 " use tab to forward cycle
 " inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " " use tab to backward cycle
@@ -344,14 +353,14 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-map <Leader>s <Plug>(easymotion-bd-f)
-map  <Leader>d <Plug>(easymotion-bd-f2)
-nmap <Leader>d <Plug>(easymotion-overwin-f2)
-map  <Leader>fw <Plug>(easymotion-bd-w)
-nmap <Leader>fw <Plug>(easymotion-overwin-w)
-nmap <Leader>fil <Plug>(easymotion-sl)
-nmap <Leader>fiw <Plug>(easymotion-bd-wl)
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" map <Leader>s <Plug>(easymotion-bd-f)
+" map  <Leader>d <Plug>(easymotion-bd-f2)
+" nmap <Leader>d <Plug>(easymotion-overwin-f2)
+" map  <Leader>fw <Plug>(easymotion-bd-w)
+" nmap <Leader>fw <Plug>(easymotion-overwin-w)
+" nmap <Leader>fil <Plug>(easymotion-sl)
+" nmap <Leader>fiw <Plug>(easymotion-bd-wl)
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
 nnoremap <leader>o :Files<cr>
@@ -546,18 +555,7 @@ let g:ale_fixers.ruby = ['rubocop']
 let g:ale_ruby_rubocop_options = ''
 let g:ale_fix_on_save = 1
 " let g:ale_history_log_output=1
-" autocmd BufWrite *.rb ALEFix
-" Prevent vim-json from concealing quotes
-" let g:vim_json_syntax_conceal = 0
 
-" Configure Vim Pencil
-" let g:pencil#wrapModeDefault = 'soft'
-
-" augroup pencil
-"   autocmd!
-"   autocmd FileType markdown,mkd call pencil#init()
-"   autocmd FileType text call pencil#init()
-" augroup END
 
 " Ignore spell checking for camelcased items
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
@@ -580,11 +578,11 @@ let ruby_spellcheck_strings = 1
 
 """"""""""""""""""'" COC Config
 
-" Use `[c` and `]c` for navigate diagnostics
+" " Use `[c` and `]c` for navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
-" Remap keys for gotos
+" " Remap keys for gotos
 nmap <Leader> gd <Plug>(coc-definition)
 nmap <Leader> gy <Plug>(coc-type-definition)
 nmap <Leader> gi <Plug>(coc-implementation)
@@ -601,10 +599,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
+" " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
+" " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
 " Better display for messages
