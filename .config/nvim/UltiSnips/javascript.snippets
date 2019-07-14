@@ -15,3 +15,91 @@ beforeEach(() => {
 	${VISUAL}$0
 });
 endsnippet
+
+# lodash
+
+snippet each
+_.each(${1:collection}, ${2:obj} => {
+  $0
+})
+endsnippet
+
+snippet map
+_.map(${1:collection}, ${2:obj} => {
+  $0
+})
+endsnippet
+
+snippet collect
+_.collect(${1:collection}, ${2:obj} => {
+  $0
+})
+endsnippet
+
+snippet groupby
+_.groupBy(${1:collection}, ${2:obj})
+endsnippet
+
+snippet reduce
+_.reduce(${1:collection}, (${7:memo}, ${2:obj}${4:, ${3:key}}) => {
+	${5:return $7 + $2}
+}, ${6:initial})
+endsnippet
+
+snippet chain
+_.chain(${1:collection})
+endsnippet
+
+snippet pluck
+_.pluck(${1:collection})
+endsnippet
+
+snippet max
+_.max(${1:array})
+endsnippet
+
+snippet min
+_.min(${1:array})
+endsnippet
+
+snippet filter
+_.filter(${1:array}, '${2:arg}')
+endsnippet
+
+snippet uniq
+_.uniq(${1:array}, ${4:, '${3:false}'})
+endsnippet
+
+snippet range
+_.range(${1:limit})
+endsnippet
+
+snippet findwhere
+_.findWhere(${1:collection}, ${2:matchObject})
+endsnippet
+
+snippet find
+_.find(${1:collection}, ${2:obj} => {
+  $2
+})
+endsnippet
+
+snippet contains
+_.contains(${1:collection}, ${2:searchValue})
+endsnippet
+
+snippet includes
+_.includes(${1:collection}, ${2:searchValue})
+endsnippet
+
+snippet pluck
+_.pluck(${1:collection}, ${2:propertyToPluck})
+endsnippet
+
+snippet where
+_.where(${1:collection}, ${2:objectToDeepCompare})
+endsnippet
+
+snippet partial
+_.partial(${1:function}, ${2:prependedArgument})
+endsnippet
