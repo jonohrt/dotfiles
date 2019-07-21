@@ -31,6 +31,8 @@ Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
 " Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
+
+Plug 'c-brenn/fuzzy-projectionist.vim'
 " Plug 'sbdchd/neoformat'
 " Plug 'snoe/nvim-parinfer.js'
 Plug 'mbbill/undotree'
