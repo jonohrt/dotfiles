@@ -220,12 +220,28 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
-map /  <Plug>(incsearch-fuzzy-/)
-map ?  <Plug>(incsearch-fuzzy-?)
-map g/ <Plug>(incsearch-fuzzy-stay)
+map z/  <Plug>(incsearch-fuzzy-/)
+map z?  <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
+
+map / <Plug>(incsearch-fuzzyword-/)
+map ? <Plug>(incsearch-fuzzyword-?)
+map g/ <Plug>(incsearch-fuzzyword-stay)
+
 " autocmd VimEnter * map <Leader>/ <Plug>(incsearch-fuzzy-/)
 " autocmd VimEnter * map <Leader>? <Plug>(incsearch-fuzzy-?)
 " autocmd VimEnter * map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
+map <Leader>/  <Plug>(incsearch-forward)
+map <Leader>?  <Plug>(incsearch-backward)
+map <Leader>g/ <Plug>(incsearch-stay)
+
+cnoremap $t <CR>:t''<CR>
+cnoremap $T <CR>:T''<CR>
+cnoremap $m <CR>:m''<CR>
+cnoremap $M <CR>:M''<CR>
+cnoremap $d <CR>:d<CR>`
+
+imap <C-v> <Plug>delimitMateS-Tab
 
 nnoremap <expr> g<c-v> '`[' . strpart(getregtype(), 0, 1) . '`]'
 
@@ -254,6 +270,9 @@ nnoremap <space>gpl :Dispatch! git pull<CR>
 let g:elm_setup_keybindings = 1
 " Leader mappings
 let mapleader = " "
+
+nnoremap { {{)
+nnoremap } })
 
 nnoremap <space>nd :NeomakeDisable<cr>
 nnoremap <space>ne :NeomakeEnable<cr>
