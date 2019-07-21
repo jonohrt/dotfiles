@@ -39,7 +39,7 @@ Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
 " Plug 'Quramy/tsuquyomi', { 'do': 'npm install -g typescript' }
-Plug 'mhartington/nvim-typescript'
+" Plug 'mhartington/nvim-typescript'
 " Plug 'terryma/vim-smooth-scroll'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/vitality.vim'
@@ -218,12 +218,12 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-autocmd VimEnter * map <Leader>/ <Plug>(incsearch-fuzzy-/)
-autocmd VimEnter * map <Leader>? <Plug>(incsearch-fuzzy-?)
-autocmd VimEnter * map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
+map /  <Plug>(incsearch-fuzzy-/)
+map ?  <Plug>(incsearch-fuzzy-?)
+map g/ <Plug>(incsearch-fuzzy-stay)
+" autocmd VimEnter * map <Leader>/ <Plug>(incsearch-fuzzy-/)
+" autocmd VimEnter * map <Leader>? <Plug>(incsearch-fuzzy-?)
+" autocmd VimEnter * map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
 
 nnoremap <expr> g<c-v> '`[' . strpart(getregtype(), 0, 1) . '`]'
 
