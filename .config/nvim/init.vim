@@ -120,6 +120,7 @@ Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
 " ###################### EDITING #################
+
 autocmd!
 runtime! plugin/sensible.vim
 runtime! plugin/supertab.vim
@@ -596,6 +597,8 @@ let g:is_posix = 1
 
 let ruby_spellcheck_strings = 1
 
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>
 
 """"""""""""""""""'" COC Config
 
