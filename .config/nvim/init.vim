@@ -126,7 +126,7 @@ call plug#end()
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',
                       \ 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/Dropbox/vimwiki/home',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+                      \ 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}]
 
 
 let g:fzf_quickfix_use_loclist = 1
@@ -138,7 +138,6 @@ endfunction
 
 command! -nargs=* FZFVWS :call Vimwiki_search(<q-args>)
 
-nnoremap <Leader>wf :FZFVWS<space>
 
 autocmd!
 runtime! plugin/sensible.vim
@@ -393,6 +392,9 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+
+" Vimwiki search
+nmap <Leader>wf :FZFVWS<space>
 
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " map <Leader>s <Plug>(easymotion-bd-f)
