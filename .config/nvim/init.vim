@@ -15,6 +15,8 @@ Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-textobj-function-javascript'
 " Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-dispatch'
@@ -117,9 +119,26 @@ Plug 'roman/golden-ratio'
 Plug 'vim-airline/vim-airline'
 
 Plug 'liuchengxu/space-vim-dark'
+Plug 'fszymanski/fzf-quickfix'
 call plug#end()
 
 " ###################### EDITING #################
+
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',
+                      \ 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/Dropbox/vimwiki/home',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+
+let g:fzf_quickfix_use_loclist = 1
+
+function! Vimwiki_search(word)
+  execute ':VWS '. a:word
+  execute 'call fzf_quickfix#run()'
+endfunction
+
+command! -nargs=* FZFVWS :call Vimwiki_search(<q-args>)
+
+nnoremap <Leader>wf :FZFVWS<space>
 
 autocmd!
 runtime! plugin/sensible.vim
