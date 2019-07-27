@@ -220,20 +220,20 @@ let NERDTreeQuitOnOpen=1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
-map z/  <Plug>(incsearch-fuzzy-/)
-map z?  <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+map <Leader>/  <Plug>(incsearch-fuzzy-/)
+map <Leader>?  <Plug>(incsearch-fuzzy-?)
+map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
 
-map / <Plug>(incsearch-fuzzyword-/)
-map ? <Plug>(incsearch-fuzzyword-?)
-map g/ <Plug>(incsearch-fuzzyword-stay)
+map z/ <Plug>(incsearch-fuzzyword-/)
+map z? <Plug>(incsearch-fuzzyword-?)
+map zg/ <Plug>(incsearch-fuzzyword-stay)
 
 " autocmd VimEnter * map <Leader>/ <Plug>(incsearch-fuzzy-/)
 " autocmd VimEnter * map <Leader>? <Plug>(incsearch-fuzzy-?)
 " autocmd VimEnter * map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
-map <Leader>/  <Plug>(incsearch-forward)
-map <Leader>?  <Plug>(incsearch-backward)
-map <Leader>g/ <Plug>(incsearch-stay)
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 cnoremap $t <CR>:t''<CR>
 cnoremap $T <CR>:T''<CR>
