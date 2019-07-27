@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "coc-json": "^1.0.17",
-    "coc-solargraph": "^1.1.2",
-    "coc-tsserver": "^1.2.1"
-  }
-}
