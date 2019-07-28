@@ -15,7 +15,9 @@ Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-textobj-function-javascript'
 " Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
+Plug 'tbabej/taskwiki'
+Plug 'mattn/calendar-vim'
 Plug 'michal-h21/vim-zettel'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
@@ -123,10 +125,14 @@ Plug 'fszymanski/fzf-quickfix'
 call plug#end()
 
 " ###################### EDITING #################
+let g:taskwiki_markup_syntax = 'markdown'
+let g:taskwiki_disable_concealcursor='yes'
+let g:calendar_options = 'nornu'
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',
-                      \ 'syntax': 'markdown', 'ext': '.md'}, {'path': '~/Dropbox/vimwiki/home',
-                      \ 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',  'syntax': 'markdown', 'ext': '.md'},
+                      \ {'path': '~/Dropbox/vimwiki/home', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1},
+                      \ {'path': '~/Dropbox/vimwiki/workout', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}
+                      \ ]
 
 
 let g:fzf_quickfix_use_loclist = 1
