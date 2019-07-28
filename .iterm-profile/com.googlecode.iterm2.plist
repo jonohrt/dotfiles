@@ -847,7 +847,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>250 321 918 423 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>14 0 1396 877 0 0 1440 877 </string>
+	<string>14 58 1362 819 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>285 220 810 602 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1082,13 +1082,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.20392155647277832</real>
+				<real>0.10980392156862745</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.11198698764474169</real>
+				<real>0.10980392156862745</real>
 				<key>Red Component</key>
-				<real>0.083256974587129662</real>
+				<real>0.10980392156862745</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -1729,9 +1729,9 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.0beta13</string>
 		<string>3.3.0beta14</string>
 		<string>3.3.0beta9</string>
+		<string>3.3.0beta13</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1752,7 +1752,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>3F394134-7F84-42A6-B13B-35E8DB526251</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>12</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>579473200.44855106</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
