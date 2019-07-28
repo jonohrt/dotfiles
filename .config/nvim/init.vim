@@ -21,6 +21,8 @@ Plug 'mattn/calendar-vim'
 Plug 'michal-h21/vim-zettel'
 Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
 Plug 'https://github.com/adelarsq/vim-matchit'
@@ -40,7 +42,7 @@ Plug 'c-brenn/fuzzy-projectionist.vim'
 " Plug 'sbdchd/neoformat'
 " Plug 'snoe/nvim-parinfer.js'
 Plug 'mbbill/undotree'
-
+Plug 'romainl/Apprentice'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
@@ -679,7 +681,11 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " colorscheme codedark
 set background=dark
 colorscheme PaperColor
+" colorscheme Apprentice
+" colorscheme hybrid_material
+" colorscheme hybrid_reverse
 let g:airline_theme='codedark'
+" let g:airline_theme='one'
 set encoding=utf8
 let g:airline_powerline_fonts = 1
 let g:onedark_terminal_italics = 1
@@ -689,6 +695,7 @@ hi Search ctermbg=LightYellow
 hi Search ctermfg=Red
 hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
+
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
 
