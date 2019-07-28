@@ -230,6 +230,9 @@ let g:targets_seekRanges = 'cc cr cb cB lc ac Ac lr lb ar ab lB Ar aB Ab AB rr l
 "removing spaces on save
 autocmd BufWritePre * %s/\s\+$//e
 
+autocmd BufWritePost *.md silent :!task sync
+autocmd BufReadPre *.md silent :!task sync
+
 augroup myvimrc
     au!
     au BufWritePost *.vim,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
