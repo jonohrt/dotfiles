@@ -171,7 +171,7 @@ eval "$(direnv hook zsh)"
 
 
 
-export PATH=./bin:$PATH
+export PATH=~/bin:$PATH
 
 # Tesla project shortcuts
 alias @tesla='cd $HOME/Projects/tesla'
