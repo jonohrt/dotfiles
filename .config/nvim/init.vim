@@ -18,6 +18,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
+Plug 'farmergreg/vim-lastplace'
+Plug 'jpalardy/vim-slime'
+Plug 'jgdavey/tslime.vim'
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'svermeulen/vim-yoink'
 Plug 'svermeulen/vim-subversive'
@@ -213,18 +216,11 @@ augroup myvimrc
     au BufWritePost *.vim,.vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
-" let g:UltiSnipsSnippetsDir='~/.config/nvim'
-" let g:UltiSnipsSnippetDirectories = 'UltiSnips'
 let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-x>"
 let g:UltiSnipsEditSplit="vertical"
 let NERDTreeQuitOnOpen=1
-
-
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " ########################### KEYBINDINGS ##############3
 
@@ -526,3 +522,4 @@ augroup neomake_hooks
     autocmd User NeomakeFinished :call StopSpinner()
     autocmd User NeomakeFinished :echom "Build complete"
 augroup END
+
