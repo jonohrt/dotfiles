@@ -8,8 +8,8 @@ Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-textobj-function-javascript'
 " Plug 'michaeljsmith/vim-indent-object'
 Plug 'wellle/targets.vim'
-" Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
-" Plug 'tbabej/taskwiki'
+Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
+Plug 'tbabej/taskwiki'
 Plug 'mattn/calendar-vim'
 Plug 'michal-h21/vim-zettel'
 Plug 'jonohrt/vim-NotableFt'
@@ -110,6 +110,8 @@ call plug#end()
 let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
 let g:calendar_options = 'nornu'
+
+let g:vimwiki_map_prefix = '<Leader>vw'
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',  'syntax': 'markdown', 'ext': '.md'},
                       \ {'path': '~/Dropbox/vimwiki/home', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1},
@@ -322,8 +324,8 @@ nmap <Leader>wf :FZFVWS<space>
 
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
-nnoremap <leader>o :Files<cr>
-nnoremap <leader>[ :GFiles<cr>
+nnoremap <leader>o :GFiles<cr>
+nnoremap <leader>[ :Files<cr>
 nnoremap <leader>p :Buffers<cr>
 nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
@@ -345,6 +347,10 @@ nnoremap Y y$
 
 
 vmap <Leader>s :call SortLines()<cr>
+
+vmap <Leader>st <Plug>SendSelectionToTmux
+nmap <Leader>st <Plug>NormalModeSendToTmux
+nmap <leader>sr <Plug>SetTmuxVars
 " ########################## SYNTAX #####################
 
 " Configure Neomake
