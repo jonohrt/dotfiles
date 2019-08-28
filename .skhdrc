@@ -1,10 +1,14 @@
 # open terminal
+cmd + alt + ctrl - l: open /Applications/Vivaldi.app
 cmd + alt + ctrl - t: open /Applications/iTerm.app
 cmd + alt + ctrl - b : open -a /Applications/Brave\ Browser.app
 cmd + alt + ctrl - c : open -a /Applications/Google\ Chrome.app
 cmd + alt + ctrl - n : open -a /Applications/Notes.app
 cmd + alt + ctrl - d : open -a /Applications/TIDAL.app
 cmd + alt + ctrl - m : open -a /Applications/Messages.app
+
+cmd + alt + ctrl - u : brew services stop yabai
+cmd + alt + ctrl - y : brew services start yabai
 
 
 # focus window
@@ -20,10 +24,10 @@ shift + alt - k : yabai -m window --swap north
 shift + alt - l : yabai -m window --swap east
 
 # move window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
+# shift + cmd - h : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# shift + cmd - l : yabai -m window --warp east
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
@@ -53,8 +57,8 @@ cmd + alt - w : yabai -m space --destroy
 
 # fast focus desktop
 cmd + alt - x : yabai -m space --focus recent
-cmd + alt - z : yabai -m space --focus prev
-cmd + alt - c : yabai -m space --focus next
+cmd + alt - h : yabai -m space --focus prev
+cmd + alt - l : yabai -m space --focus next
 cmd + alt - 1 : yabai -m space --focus 1
 cmd + alt - 2 : yabai -m space --focus 2
 cmd + alt - 3 : yabai -m space --focus 3
@@ -68,8 +72,8 @@ cmd + alt - 0 : yabai -m space --focus 10
 
 # send window to desktop and follow focus
 shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
-shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
-shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
+shift + cmd - h : yabai -m window --space prev; yabai -m space --focus prev
+shift + cmd - l : yabai -m window --space next; yabai -m space --focus next
 shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
 shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
