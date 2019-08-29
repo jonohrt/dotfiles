@@ -139,7 +139,7 @@ set secure
 set smartindent
 
 " let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore .vscode -g ""'
-let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" -g "!coverage/*"'
+let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{node_modules,.git/*,build}" -g "!coverage/*"'
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" -g "!coverage/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 set shell=zsh
 set diffopt+=vertical
@@ -324,8 +324,8 @@ nmap <Leader>wf :FZFVWS<space>
 
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
-nnoremap <leader>o :GFiles<cr>
-nnoremap <leader>[ :Files<cr>
+nnoremap <leader>[ :GFiles<cr>
+nnoremap <leader>o :Files<cr>
 nnoremap <leader>p :Buffers<cr>
 nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
@@ -336,7 +336,7 @@ nnoremap <leader>fh :History<cr>
 nnoremap <leader>f: :History:<cr>
 nnoremap <leader>f/ :History/<cr>
 nnoremap <leader>fl :BLines<cr>
-nnoremap <leader>fb :Lines<cr>
+nnoremap <leader>fL :Lines<cr>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
 
