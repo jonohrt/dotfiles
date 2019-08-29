@@ -1,11 +1,13 @@
 # open terminal
 cmd + alt + ctrl - l: open /Applications/Vivaldi.app
+cmd + alt + ctrl - k: open /Applications/Slack.app
 cmd + alt + ctrl - t: open /Applications/iTerm.app
-cmd + alt + ctrl - b : open -a /Applications/Brave\ Browser.app
-cmd + alt + ctrl - c : open -a /Applications/Google\ Chrome.app
-cmd + alt + ctrl - n : open -a /Applications/Notes.app
-cmd + alt + ctrl - d : open -a /Applications/TIDAL.app
-cmd + alt + ctrl - m : open -a /Applications/Messages.app
+cmd + alt + ctrl - b : open /Applications/Brave\ Browser.app
+cmd + alt + ctrl - c : open /Applications/Google\ Chrome.app
+cmd + alt + ctrl - n : open /Applications/Notes.app
+cmd + alt + ctrl - d : open /Applications/TIDAL.app
+cmd + alt + ctrl - m : open /Applications/Messages.app
+cmd + alt + ctrl - o : open /Applications/Microsoft\ Outlook.app
 
 cmd + alt + ctrl - u : brew services stop yabai
 cmd + alt + ctrl - y : brew services start yabai
@@ -87,16 +89,16 @@ shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
 ctrl + alt - x  : yabai -m display --focus recent
-ctrl + alt - z  : yabai -m display --focus prev
-ctrl + alt - c  : yabai -m display --focus next
+ctrl + alt - h  : yabai -m display --focus prev
+ctrl + alt - l  : yabai -m display --focus next
 ctrl + alt - 1  : yabai -m display --focus 1
 ctrl + alt - 2  : yabai -m display --focus 2
 ctrl + alt - 3  : yabai -m display --focus 3
 
 # send window to monitor and follow focus
 ctrl + cmd - x  : yabai -m window --display recent; yabai -m display --focus recent
-ctrl + cmd - z  : yabai -m window --display prev; yabai -m display --focus prev
-ctrl + cmd - c  : yabai -m window --display next; yabai -m display --focus next
+ctrl + cmd - h  : yabai -m window --display prev; yabai -m display --focus prev
+ctrl + cmd - l  : yabai -m window --display next; yabai -m display --focus next
 ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
 ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
 ctrl + cmd - 3  : yabai -m window --display 3; yabai -m display --focus 3
