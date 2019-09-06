@@ -40,5 +40,7 @@ yabai -m config left_padding                 0
 yabai -m config right_padding                0
 yabai -m config window_gap                   0
 
+yabai -m signal --add event=space_changed action="bash ~/.config/yabai/autodestroy.sh"
+
 echo "yabai configuration loaded.."
 
