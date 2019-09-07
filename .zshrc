@@ -148,9 +148,10 @@ alias gcb='git checkout -b'
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
 compctl -K tmux-sessions-autofill tk
 
-
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+bindkey '^k' history-beginning-search-backward
+bindkey '^j' history-beginning-search-forward
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:$PATH:$HOME/Library/Python/3.6/bin"
