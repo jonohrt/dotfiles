@@ -37,10 +37,18 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-
-export FZF_DEFAULT_COMMAND='fd . $HOME --type file -I --hidden --color=always'
-export FZF_DEFAULT_OPTS="--ansi"
+export FZF_DEFAULT_COMMAND='fd . $HOME --follow --hidden --exclude "!{.git,node_modules}/*" --color=always'
+export FZF_DEFAULT_OPTS="--ansi" #-jheight=70% --preview='bat {}' --preview-window=right:60%:wrap"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
+# fr() {
+#   fd . --type d
+# }
+# # fzf --bind 'f1:execute(fd . ~/{})
+# zle -N fr{,}
+# bindkey '^f' "fr"
+bindkey -s '^f' '$(fd . --type d | fzf)^M'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -152,9 +160,10 @@ alias gcb='git checkout -b'
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
 compctl -K tmux-sessions-autofill tk
 
-
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+bindkey '^k' history-beginning-search-backward
+bindkey '^j' history-beginning-search-forward
 
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:$PATH:$HOME/Library/Python/3.6/bin"
