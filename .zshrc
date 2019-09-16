@@ -36,7 +36,11 @@ bindkey '^Z' fancy-ctrl-z
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
+
+export FZF_DEFAULT_COMMAND='fd . $HOME --type file -I --hidden --color=always'
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -194,3 +198,27 @@ if [ -f '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+bindkey "^k" history-beginning-search-backward
+bindkey "^j" history-beginning-search-forward
+
+fcd() {
+  local dir
+  dir=$(fd . $HOME --type d  -I --hidden --follow 2> /dev/null | fzf +m --height=40% --layout=reverse) && cd "$dir"
+}
+
+zle -N fcd
+bindkey "^f" fcd
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
