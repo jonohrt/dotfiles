@@ -28,6 +28,7 @@ Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
+Plug 'https://github.com/alok/notational-fzf-vim'
 
 Plug 'c-brenn/fuzzy-projectionist.vim'
 Plug 'mbbill/undotree'
@@ -74,12 +75,14 @@ Plug 'mhinz/vim-signify'
 " Plug 'digitaltoad/vim-pug'
 " Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'elzr/vim-json'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 " Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Plug 'jelera/vim-javascript-syntax'
-Plug  'isRuslan/vim-es6'
-Plug 'sheerun/vim-polyglot'
-Plug 'isruslan/vim-es6'
+" Plug  'isRuslan/vim-es6'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'isruslan/vim-es6'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'kchmck/vim-coffee-script'
@@ -107,6 +110,9 @@ Plug 'fszymanski/fzf-quickfix'
 call plug#end()
 
 " ###################### EDITING #################
+let g:nv_search_paths = ['~/wiki']
+let g:nv_create_note_key = 'ctrl-x'
+nnoremap <silent> <c-o> :NV<CR>
 let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
 let g:calendar_options = 'nornu'
@@ -477,6 +483,15 @@ hi Search ctermfg=Red
 hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
 
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'override' : {
+  \         'color00' : ['#1e1e1e', '222']
+  \       }
+  \     }
+  \   }
+  \ }
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
 
