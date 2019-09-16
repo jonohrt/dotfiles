@@ -110,7 +110,7 @@ call plug#end()
 let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
 let g:calendar_options = 'nornu'
-
+let g:gutentags_ctags_exclude = ["build/*"]
 let g:vimwiki_map_prefix = '<Leader>vw'
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',  'syntax': 'markdown', 'ext': '.md'},
