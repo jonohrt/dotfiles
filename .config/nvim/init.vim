@@ -473,6 +473,15 @@ set termguicolors
 
 set guicursor=n-v-c:block,i-ci-ve:ver25-blinkoff400-blinkon250,r-cr:hor20,o:hor50
 
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'override' : {
+  \         'color07' : ['#AEDBFE']
+  \       }
+  \     }
+  \   }
+  \ }
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " colorscheme codedark
 set background=dark
@@ -494,15 +503,6 @@ hi Search ctermfg=Red
 hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
 
-" let g:PaperColor_Theme_Options = {
-"   \   'theme': {
-"   \     'default.dark': {
-"   \       'override' : {
-"   \         'color00' : ['#1e1e1e', '222']
-"   \       }
-"   \     }
-"   \   }
-"   \ }
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
 
