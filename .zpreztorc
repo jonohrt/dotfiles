@@ -45,7 +45,14 @@ zstyle ':prezto:load' pmodule \
   'zsh-vim-mode' \
   'git' \
   'syntax-highlighting' \
-  'prompt'
+  'prompt' \
+  'fzf'
+
+# Use keybindings
+zstyle ':prezto:module:fzf' key-bindings 'yes'
+
+# Use completion
+zstyle ':prezto:module:fzf' completion 'yes'
 
 #
 # Autosuggestions
@@ -123,7 +130,7 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 zstyle ':prezto:module:prompt' show-return-val 'no'
 
 # Set the working directory prompt display length.
@@ -214,7 +221,7 @@ zstyle ':prezto:module:prompt' show-return-val 'no'
 #
 
 # Auto start a session when Zsh is launched in a local terminal.
-# zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
 
 # Auto start a session when Zsh is launched in a SSH connection.
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
