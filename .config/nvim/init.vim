@@ -4,6 +4,7 @@ call plug#begin('~/.vim/bundle')
 " " GENERAL
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-textobj-function-javascript'
 " Plug 'michaeljsmith/vim-indent-object'
@@ -29,6 +30,7 @@ Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'sonph/onehalf'
 
 Plug 'c-brenn/fuzzy-projectionist.vim'
 Plug 'mbbill/undotree'
@@ -74,6 +76,7 @@ Plug 'mhinz/vim-signify'
 " Language syntax highlighting
 " Plug 'digitaltoad/vim-pug'
 " Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'gavocanov/vim-js-indent'
 Plug 'elzr/vim-json'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
@@ -280,7 +283,10 @@ nnoremap <space>ne :NeomakeEnable<cr>
 nmap yof :let b:ale_fix_on_save=0<CR>
 
 nmap <silent> t<C-f> :TestFile<CR>
+
+nmap <silent> tt<C-f> :TestFile -strategy=tslime <cr> :call Send_to_Tmux("\r")<cr>
 nmap <silent> t<C-a> :TestSuite<CR>
+nmap <silent> tt<C-a> :TestSuite -strategy=tslime <cr> :call Send_to_Tmux("\r")<cr>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
@@ -458,16 +464,33 @@ set shortmess+=c
 set signcolumn=yes
 " ################## THEMES #################
 
+" Get italics to work... I think
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+
 if !has("gui_vimr")
-  set guifont=SourceCodePro\ Nerd\ Font:h11
+  set guifont=SourceCodePro\ Nerd\ Font:h16
 endif
 set termguicolors
+
+
+set guicursor=n-v-c:block,i-ci-ve:ver25-blinkoff400-blinkon250,r-cr:hor20,o:hor50
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'override' : {
+  \         'color07' : ['#AEDBFE']
+  \       }
+  \     }
+  \   }
+  \ }
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " colorscheme codedark
 set background=dark
 colorscheme PaperColor
+" colorscheme gruvbox
+
 " colorscheme Apprentice
 " colorscheme hybrid_material
 " colorscheme hybrid_reverse
@@ -483,15 +506,6 @@ hi Search ctermfg=Red
 hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'override' : {
-  \         'color00' : ['#1e1e1e', '222']
-  \       }
-  \     }
-  \   }
-  \ }
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
 
