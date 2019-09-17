@@ -283,7 +283,10 @@ nnoremap <space>ne :NeomakeEnable<cr>
 nmap yof :let b:ale_fix_on_save=0<CR>
 
 nmap <silent> t<C-f> :TestFile<CR>
+
+nmap <silent> tt<C-f> :TestFile -strategy=tslime <cr> :call Send_to_Tmux("\r")<cr>
 nmap <silent> t<C-a> :TestSuite<CR>
+nmap <silent> tt<C-a> :TestSuite -strategy=tslime <cr> :call Send_to_Tmux("\r")<cr>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
