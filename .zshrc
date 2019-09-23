@@ -13,7 +13,7 @@ export EDITOR="nvim"
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
 export TERM='xterm-256color-italic';
-bindkey -v
+bindkey -e
 # 10ms for key sequences
 export KEYTIMEOUT=1
 bindkey -M vicmd '^[' undefined-key
@@ -160,11 +160,6 @@ alias gcb='git checkout -b'
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
 compctl -K tmux-sessions-autofill tk
 
-bindkey '^[[A' history-beginning-search-backward
-bindkey '^[[B' history-beginning-search-forward
-bindkey '^k' history-beginning-search-backward
-bindkey '^j' history-beginning-search-forward
-
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:$PATH:$HOME/Library/Python/3.6/bin"
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -218,8 +213,8 @@ bindkey '^x^e' edit-command-line
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-bindkey "^k" history-beginning-search-backward
-bindkey "^j" history-beginning-search-forward
+# bindkey "^o" history-substring-search-up
+# bindkey "^i" history-substring-search-down
 
 fcd() {
   local dir
