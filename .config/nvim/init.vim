@@ -13,7 +13,7 @@ Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
 Plug 'tbabej/taskwiki'
 Plug 'mattn/calendar-vim'
 Plug 'michal-h21/vim-zettel'
-Plug 'jonohrt/vim-NotableFt'
+" Plug 'jonohrt/vim-NotableFt'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -29,7 +29,7 @@ Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
-Plug 'https://github.com/alok/notational-fzf-vim'
+" Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'sonph/onehalf'
 
 Plug 'c-brenn/fuzzy-projectionist.vim'
@@ -63,7 +63,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
+" Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
@@ -113,8 +113,8 @@ Plug 'fszymanski/fzf-quickfix'
 call plug#end()
 
 " ###################### EDITING #################
-let g:nv_search_paths = ['~/wiki']
-let g:nv_create_note_key = 'ctrl-x'
+" let g:nv_search_paths = ['~/wiki']
+" let g:nv_create_note_key = 'ctrl-x'
 nnoremap <silent> <c-o> :NV<CR>
 let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
@@ -245,13 +245,13 @@ endfunction
 nmap <Leader>jf :%!python -m json.tool<cr>
 imap <C-D> <C-O>x
 
-map <Leader>/  <Plug>(incsearch-fuzzy-/)
-map <Leader>?  <Plug>(incsearch-fuzzy-?)
-map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
+" map <Leader>/  <Plug>(incsearch-fuzzy-/)
+" map <Leader>?  <Plug>(incsearch-fuzzy-?)
+" map <Leader>g/ <Plug>(incsearch-fuzzy-stay)
 
-map z/ <Plug>(incsearch-fuzzyword-/)
-map z? <Plug>(incsearch-fuzzyword-?)
-map zg/ <Plug>(incsearch-fuzzyword-stay)
+" map z/ <Plug>(incsearch-fuzzyword-/)
+" map z? <Plug>(incsearch-fuzzyword-?)
+" map zg/ <Plug>(incsearch-fuzzyword-stay)
 
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
