@@ -191,6 +191,8 @@ alias @site='cd $HOME/Projects/tesla/projects/tesla-site'
 alias @ui='cd $HOME/Projects/tesla/projects/tesla-ui'
 alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'
 
+alias df='dotfiles '
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
