@@ -2462,13 +2462,13 @@
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>
 			<false/>
 			<key>Prompt Before Closing 2</key>
 			<integer>0</integer>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
@@ -2675,6 +2675,7 @@
 		<string>3.3.4beta1</string>
 		<string>3.3.0beta13</string>
 		<string>3.3.0beta9</string>
+		<string>3.3.5beta2</string>
 		<string>3.3.5beta1</string>
 		<string>3.3.3beta2</string>
 	</array>
@@ -2694,14 +2695,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{293, 590}</string>
+		<string>{481, 793}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>3F394134-7F84-42A6-B13B-35E8DB526251</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>39</integer>
+	<integer>41</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>579473200.44855106</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -3219,6 +3220,22 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
@@ -3483,7 +3500,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-17T02:47:55Z</date>
+	<date>2019-09-25T03:22:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3549,7 +3566,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.5beta1</string>
+	<string>3.3.5beta2</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>4</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
