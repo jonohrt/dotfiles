@@ -13,10 +13,8 @@ export EDITOR="nvim"
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
 export TERM='xterm-256color-italic';
-bindkey -e
 # 10ms for key sequences
 export KEYTIMEOUT=1
-bindkey -M vicmd '^[' undefined-key
 
 MODE_CURSOR_VICMD="green block"
 MODE_CURSOR_VIINS="#20d08a blinking bar"
@@ -213,16 +211,42 @@ bindkey '^x^e' edit-command-line
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-# bindkey "^o" history-substring-search-up
-# bindkey "^i" history-substring-search-down
-
-fcd() {
-  local dir
-  dir=$(fd . $HOME --type d  -I --hidden --follow 2> /dev/null | fzf +m --height=40% --layout=reverse) && cd "$dir"
-}
-
-zle -N fcd
-bindkey "^f" fcd
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+# Change cursor shape between insert and normal mode in iTerm2.app
+
+# {{{1 vi mode cursor indicator
+function zle-keymap-select zle-line-init
+{
+    # change cursor shape
+    if [[ -n "$TMUX" ]]; then  # tmux
+      case $KEYMAP in
+          vicmd)      print -n '\033[0 q';; # block cursor
+          viins|main) echo -ne '\e[5 q'
+      esac
+    else # iTerm2
+      case $KEYMAP in
+          vicmd)      print -n '\033[0 q';; # block cursor
+          viins|main) echo -ne '\e[5 q'
+          # vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+          # viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+      esac
+    fi
+
+    zle reset-prompt
+    zle -R
+}
+
+function zle-line-finish
+{
+    if [[ -n "$TMUX" ]]; then # tmux
+      print -n -- '\033[0 q'  # block cursor
+    else # iTerm2
+      print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+    fi
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select

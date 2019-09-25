@@ -16,7 +16,7 @@
 zstyle ':prezto:*:*' color 'yes'
 
 # Add additional directories to load prezto modules from
-# zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-contrib
+zstyle ':prezto:load' pmodule-dirs $HOME/.zprezto-modules
 
 # Set the Zsh modules to load (man zshmodules).
 # zstyle ':prezto:load' zmodule 'attr' 'stat'
@@ -30,11 +30,14 @@ zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
   'editor' \
+  'command-not-found' \
   'history' \
   'history-substring-search' \
+  'archive' \
   'directory' \
   'spectrum' \
   'tmux' \
+  'fasd' \
   'utility' \
   'ssh' \
   'completion' \
@@ -42,11 +45,16 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'ruby' \
   'rails' \
-  'zsh-vim-mode' \
   'git' \
   'syntax-highlighting' \
-  'prompt' \
-  'fzf'
+  'alias-tips' \
+  'contrib-clipboard' \
+  'contrib-kubernetes' \
+  'enhancd' \
+  'prompt'
+
+zstyle ":prezto:module:enhancd" command "fzy"
+zstyle ":prezto:module:enhancd" command "cd"
 
 # Use keybindings
 zstyle ':prezto:module:fzf' key-bindings 'yes'
@@ -75,7 +83,6 @@ zstyle ':prezto:module:fzf' completion 'yes'
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' key-bindings 'vi'
-
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
