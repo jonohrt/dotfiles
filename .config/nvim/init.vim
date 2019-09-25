@@ -153,7 +153,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{nod
 set shell=zsh
 set diffopt+=vertical
 let g:incsearch#auto_nohlsearch = 1
-set incsearch
+" set incsearch
 "Stop quickfix prompt for large messages at the cost of less editing room
 set cmdheight=1
 " highlight current line
