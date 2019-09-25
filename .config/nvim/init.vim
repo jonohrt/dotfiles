@@ -62,7 +62,7 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
-Plug 'haya14busa/incsearch.vim'
+" Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " Sets the project root to the current Git repository by default
@@ -153,6 +153,7 @@ let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{nod
 set shell=zsh
 set diffopt+=vertical
 let g:incsearch#auto_nohlsearch = 1
+set incsearch
 "Stop quickfix prompt for large messages at the cost of less editing room
 set cmdheight=1
 " highlight current line
@@ -253,9 +254,9 @@ imap <C-D> <C-O>x
 " map z? <Plug>(incsearch-fuzzyword-?)
 " map zg/ <Plug>(incsearch-fuzzyword-stay)
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" map /  <Plug>(incsearch-forward)
+" map ?  <Plug>(incsearch-backward)
+" map g/ <Plug>(incsearch-stay)
 
 cnoremap $t <CR>:t''<CR>
 cnoremap $T <CR>:T''<CR>
@@ -323,12 +324,6 @@ nmap <leader>cc <Plug>CommentaryLine
 nmap <leader>cu <Plug>Commentary<Plug>Commentary
 
 
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
 
 
 " Vimwiki search
