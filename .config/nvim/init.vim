@@ -113,9 +113,6 @@ Plug 'fszymanski/fzf-quickfix'
 call plug#end()
 
 " ###################### EDITING #################
-" let g:nv_search_paths = ['~/wiki']
-" let g:nv_create_note_key = 'ctrl-x'
-nnoremap <silent> <c-o> :NV<CR>
 let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
 let g:calendar_options = 'nornu'
@@ -330,6 +327,8 @@ nmap <leader>cu <Plug>Commentary<Plug>Commentary
 nmap <Leader>wf :FZFVWS<space>
 
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
+
+nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
 
 nnoremap <leader>[ :GFiles<cr>
 nnoremap <leader>o :Files<cr>
