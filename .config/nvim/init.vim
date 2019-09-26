@@ -552,3 +552,5 @@ augroup neomake_hooks
     autocmd User NeomakeFinished :echom "Build complete"
 augroup END
 
+"Maybe fix broken syntax highlighting
+autocmd BufEnter * :syntax sync fromstart
