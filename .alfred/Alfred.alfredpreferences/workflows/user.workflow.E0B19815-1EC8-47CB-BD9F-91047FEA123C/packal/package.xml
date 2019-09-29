@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Search Browser tabs</name>
+  <version>1.0.0</version>
+  <bundle>com.lucasarts.SearchTabs</bundle>
+  <updated>1512959008</updated>
+  <file>searchtabs.alfredworkflow</file>
+</workflow>
