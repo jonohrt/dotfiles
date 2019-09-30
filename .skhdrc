@@ -152,6 +152,16 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
+# Set all windows on active space to zoom-fullscreen
+shift + cmd - f: yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 0) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
+# Set all windows on active space back to normal
+shift + cmd - e : yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 1) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
 # toggle window border
 shift + alt - b : yabai -m window --toggle border
 
@@ -172,3 +182,4 @@ alt - p : yabai -m window --toggle sticky;\
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
+
