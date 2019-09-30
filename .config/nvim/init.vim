@@ -3,7 +3,7 @@ filetype plugin indent on
 call plug#begin('~/.vim/bundle')
 " " GENERAL
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
-
+Plug 'WolfgangMehner/bash-support'
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-abolish'
 Plug 'thinca/vim-textobj-function-javascript'
@@ -39,14 +39,14 @@ Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/vitality.vim'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ericbn/vim-relativize'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rizzatti/dash.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'tommcdo/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'ludovicchabant/vim-gutentags'
@@ -62,9 +62,9 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-fugitive'
+Plug 'itspriddle/vim-shellcheck'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 " Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
 
@@ -117,11 +117,11 @@ let g:taskwiki_markup_syntax = 'markdown'
 let g:taskwiki_disable_concealcursor='yes'
 let g:calendar_options = 'nornu'
 let g:gutentags_ctags_exclude = ["build/*"]
-let g:vimwiki_map_prefix = '<Leader>vw'
+let g:vimwiki_map_prefix = '<Leader>e'
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/work',  'syntax': 'markdown', 'ext': '.md'},
                       \ {'path': '~/Dropbox/vimwiki/home', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1},
-                      \ {'path': '~/Dropbox/vimwiki/workout', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}
+                      \ {'path': '~/Dropbox/vimwiki/tech', 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}
                       \ ]
 
 
@@ -233,6 +233,8 @@ let NERDTreeQuitOnOpen=1
 
 " ########################### KEYBINDINGS ##############3
 
+
+
 function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\(.*\)$/\=strdisplaywidth( submatch(0) ) . " " . submatch(0)/'
     execute a:firstline . "," . a:lastline . 'sort n'
@@ -276,8 +278,8 @@ let mapleader = " "
 nnoremap { {{)
 nnoremap } })
 
-nnoremap <space>nd :NeomakeDisable<cr>
-nnoremap <space>ne :NeomakeEnable<cr>
+" nnoremap <space>nd :NeomakeDisable<cr>
+" nnoremap <space>ne :NeomakeEnable<cr>
 nmap yof :let b:ale_fix_on_save=0<CR>
 
 nmap <silent> t<C-f> :TestFile<CR>
@@ -346,7 +348,7 @@ nnoremap <leader>fL :Lines<cr>
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
 
-nnoremap <Leader>n :NERDTreeToggle<cr>
+" nnoremap <Leader>n :NERDTreeToggle<cr>
 
 nnoremap <leader>k :bd<cr>
 nnoremap Y y$
@@ -357,6 +359,9 @@ vmap <Leader>s :call SortLines()<cr>
 vmap <Leader>st <Plug>SendSelectionToTmux
 nmap <Leader>st <Plug>NormalModeSendToTmux
 nmap <leader>sr <Plug>SetTmuxVars
+
+
+nmap <silent> <leader>d <Plug>DashSearch
 " ########################## SYNTAX #####################
 
 " Configure Neomake
@@ -386,10 +391,11 @@ let g:ale_sign_warning='⚠'
 let g:ale_sign_error='✖'
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:ale_javascript_enabled_makers = ['eslint']
+let g:ale_bash_enabled_makers = ['shellcheck']
 let g:neomake_typescript_checkers = ['tsuquyomi', 'tslint'] " You shouldn't use 'tsc' checker.
 let g:ale_ruby_rubocop_executable = './bin/rubocop'
 let g:ale_javascript_eslint_executable = 'yarn eslint'
-let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'] }
+let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'bash':['shellcheck'] }
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = [ 'eslint']
 let g:ale_fixers.ruby = ['rubocop']

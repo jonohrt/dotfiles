@@ -1,29 +1,31 @@
 # open terminal
 cmd + alt + ctrl - l: open /Applications/Vivaldi.app
 cmd + alt + ctrl - k: open /Applications/Slack.app
-cmd + alt + ctrl - h: open /Applications/iTerm.app
+cmd + alt + ctrl - i: open /Applications/iTerm.app
 cmd + alt + ctrl - b : open /Applications/Brave\ Browser.app
 cmd + alt + ctrl - c : open /Applications/Google\ Chrome.app
 cmd + alt + ctrl - n : open /Applications/Notes.app
 cmd + alt + ctrl - d : open /Applications/TIDAL.app
 cmd + alt + ctrl - m : open /Applications/Messages.app
 cmd + alt + ctrl - o : open /Applications/Microsoft\ Outlook.app
+cmd + alt + ctrl - p : open /Applications/System\ Preferences.app
+cmd + alt + ctrl - a : open /Applications/Utilities/Activity\ Monitor.app
 
 cmd + alt + ctrl - u : brew services stop yabai
 cmd + alt + ctrl - y : brew services start yabai
 
 
 # focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+shift + ctrl - h : yabai -m window --focus west
+shift + ctrl - j : yabai -m window --focus south
+shift + ctrl - k : yabai -m window --focus north
+shift + ctrl - l : yabai -m window --focus east
 
 # swap window
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
+shift + ctrl + cmd - h : yabai -m window --swap west
+shift + ctrl + cmd - j : yabai -m window --swap south
+shift + ctrl + cmd - k : yabai -m window --swap north
+shift + ctrl + cmd - l : yabai -m window --swap east
 
 # move window
 # shift + cmd - h : yabai -m window --warp west
@@ -150,6 +152,16 @@ alt - f : yabai -m window --toggle zoom-fullscreen
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
+# Set all windows on active space to zoom-fullscreen
+shift + cmd - f: yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 0) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
+# Set all windows on active space back to normal
+shift + cmd - e : yabai -m query --windows --space \
+    | jq -re '.[] | select(."zoom-fullscreen" == 1) | .id' \
+    | xargs -I{} yabai -m window {} --toggle zoom-fullscreen
+
 # toggle window border
 shift + alt - b : yabai -m window --toggle border
 
@@ -170,3 +182,4 @@ alt - p : yabai -m window --toggle sticky;\
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
 ctrl + alt - d : yabai -m space --layout float
+

@@ -153,6 +153,7 @@ alias gpo='git pull origin'
 alias gc="git checkout"
 
 alias gcb='git checkout -b'
+alias gco='git checkout $(git branch | fzy)'
 
 # Add autocomplete to the custom tmux functions.
 compctl -K tmux-and-tmuxinator-sessions-autofill ta

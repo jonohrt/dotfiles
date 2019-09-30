@@ -2,5 +2,8 @@
   "typescript.suggest.enabled": false,
   "typescript.validate.enable": false,
   "javascript.suggest.enabled": false,
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "sh.enable": true
+
+
 }
