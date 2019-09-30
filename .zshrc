@@ -35,7 +35,7 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-export FZF_DEFAULT_COMMAND='fd . $HOME --follow --hidden --exclude "!{.git,node_modules}/*" --color=always'
+export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude "!{.git,node_modules}/*" --color=always'
 export FZF_DEFAULT_OPTS="--ansi" #-jheight=70% --preview='bat {}' --preview-window=right:60%:wrap"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
@@ -193,6 +193,7 @@ alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'
 
 alias df='dotfiles '
 alias kx="kubectx"
+alias gco="git branch | cut -c 3- | fzy | xargs git checkout"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
@@ -274,3 +275,4 @@ _fzf_complete_git() {
 _fzf_complete_git_post() {
     awk '{print $1}'
 }
+
