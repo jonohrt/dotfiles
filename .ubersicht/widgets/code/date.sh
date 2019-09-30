@@ -1,3 +1,3 @@
 #!/bin/sh
 
-date "+%a %-Oe %b %H:%M"
+date "+%a %b %-Oe %l:%M%p"
