@@ -3,7 +3,8 @@
   "typescript.validate.enable": false,
   "javascript.suggest.enabled": false,
   "javascript.validate.enable": false,
-  "sh.enable": true
+  "sh.enable": true,
+  "solargraph.commandPath": "/Users/johrt/.rbenv/shims/solargraph"
 
 
 }

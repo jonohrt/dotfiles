@@ -1,5 +1,6 @@
 # open terminal
 cmd + alt + ctrl - l: open /Applications/Vivaldi.app
+cmd + alt + ctrl - f: open /Applications/Firefox.app
 cmd + alt + ctrl - k: open /Applications/Slack.app
 cmd + alt + ctrl - i: open /Applications/iTerm.app
 cmd + alt + ctrl - b : open /Applications/Brave\ Browser.app

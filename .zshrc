@@ -46,7 +46,7 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 # # fzf --bind 'f1:execute(fd . ~/{})
 # zle -N fr{,}
 # bindkey '^f' "fr"
-bindkey -s '^f' '$(fd . --type d | fzf)^M'
+# bindkey -s '^f' '$(fd . --type d | fzf)^M'
 
 # If the session is in the list of current tmux sessions, it is attached. Otherwise, a new session
 # is created and attached with the argument as its name.
@@ -180,6 +180,7 @@ eval "$(direnv hook zsh)"
 
 export PATH=~/bin:$PATH
 
+alias cat="ccat"
 # Tesla project shortcuts
 alias @tesla='cd $HOME/Projects/tesla'
 alias @adapter='cd $HOME/Projects/tesla/projects/tesla-adapter'
@@ -192,7 +193,7 @@ alias @site='cd $HOME/Projects/tesla/projects/tesla-site'
 alias @ui='cd $HOME/Projects/tesla/projects/tesla-ui'
 alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'
 
-alias df='dotfiles '
+alias dfl='dotfiles '
 alias kx="kubectx"
 alias gco="git branch | cut -c 3- | fzy | xargs git checkout"
 
@@ -277,3 +278,4 @@ _fzf_complete_git_post() {
     awk '{print $1}'
 }
 
+# export RUBYOPT='-W:no-deprecated -W:no-experimental'
