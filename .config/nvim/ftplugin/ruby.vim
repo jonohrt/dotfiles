@@ -10,3 +10,11 @@ endfunction
 
 nmap <leader>sft :call CallRspec()<cr>
 nmap <leader>slt :call CallRspecLine()<cr>
+
+
+augroup tags
+    au!
+    au BufWritePost *.rb silent !ripper-tags -R --exclude=log
+augroup END
+
+

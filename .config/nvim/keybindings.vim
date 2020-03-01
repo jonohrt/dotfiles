@@ -35,7 +35,7 @@ function! s:check_back_space() abort "{{{
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
 
-tnoremap <C-n> <C-\><C-n>
+" tnoremap <C-n> <C-\><C-n>
 
 nnoremap 0 ^
 nnoremap ^ 0
@@ -64,8 +64,8 @@ nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
 
 nnoremap <leader>[ :GFiles<cr>
-nnoremap <leader>o :Files<cr>
-nnoremap <leader>p :Buffers<cr>
+nnoremap <leader>o :call fzf#vim#files('', fzf#vim#with_preview('right'))<cr>
+nnoremap <leader>p :call fzf#vim#buffers('', fzf#vim#with_preview('right'))<cr>
 nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
 nnoremap <leader>fc :Commits<cr>
@@ -93,11 +93,11 @@ nmap <leader>sr <Plug>SetTmuxVars
 nmap <silent> <leader>d <Plug>DashSearch
 
 
-nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+" nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+" nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
+" nmap p <plug>(YoinkPaste_p)
+" nmap P <plug>(YoinkPaste_P)
 
 " s for substitute
 nmap s <plug>(SubversiveSubstitute)
