@@ -4,6 +4,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-bundler'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 
 Plug 'thinca/vim-textobj-function-javascript'
@@ -23,7 +24,6 @@ Plug 'wellle/targets.vim'
 Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
 Plug 'tbabej/taskwiki'
 Plug 'mattn/calendar-vim'
-Plug 'jonohrt/vim-NotableFt'
 Plug 'farmergreg/vim-lastplace'
 Plug 'jpalardy/vim-slime'
 Plug 'jgdavey/tslime.vim'
@@ -33,7 +33,6 @@ Plug 'svermeulen/vim-subversive'
 Plug 'janko-m/vim-test'
 Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'sonph/onehalf'
 
 Plug 'c-brenn/fuzzy-projectionist.vim'
@@ -47,11 +46,9 @@ Plug 'sjl/vitality.vim'
 Plug 'ericbn/vim-relativize'
 Plug 'rizzatti/dash.vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
-Plug 'tommcdo/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
@@ -85,7 +82,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
-Plug 'tpope/vim-bundler'
 Plug 'vim-ruby/vim-ruby'
 Plug 'othree/html5.vim'
 Plug 'tpope/vim-rails'
@@ -96,13 +92,15 @@ Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 " Linting
 
 " Quickly run Unix commands.
 Plug 'tpope/vim-eunuch'
 
-" Automatically resize open splits so the current is the biggest
-Plug 'roman/golden-ratio'
+" " Automatically resize open splits so the current is the biggest
+" Plug 'roman/golden-ratio'
 Plug 'vim-airline/vim-airline'
 
 Plug 'NLKNguyen/papercolor-theme'
