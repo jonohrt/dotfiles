@@ -68,8 +68,8 @@ nnoremap <leader>o :call fzf#vim#files('', fzf#vim#with_preview('right'))<cr>
 nnoremap <leader>p :call fzf#vim#buffers('', fzf#vim#with_preview('right'))<cr>
 nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
-nnoremap <leader>fc :Commits<cr>
-nnoremap <leader>fcc :BCommits<cr>
+nnoremap <leader>fgc :Commits<cr>
+nnoremap <leader>fgb :BCommits<cr>
 nnoremap <leader>] :GFiles?<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>f: :History:<cr>
@@ -85,6 +85,8 @@ nnoremap Y y$
 
 vmap <Leader>s :call SortLines()<cr>
 
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 " tslime
 vmap <Leader>st <Plug>SendSelectionToTmux
 nmap <Leader>st <Plug>NormalModeSendToTmux

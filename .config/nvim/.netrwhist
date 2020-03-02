@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/johrt/.zprezto'
 let g:netrw_dirhist_4='/Users/johrt/Projects/tesla/projects/tesla-site/app/controllers'
 let g:netrw_dirhist_3='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2/lib'
 let g:netrw_dirhist_2='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/ge
 let g:netrw_dirhist_8='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2'
 let g:netrw_dirhist_7='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2/lib'
 let g:netrw_dirhist_6='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2'
-let g:netrw_dirhist_5='/Users/johrt/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/forecast_io-2.0.2/lib'
