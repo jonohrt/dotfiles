@@ -89,6 +89,9 @@ set signcolumn=yes
 " Cursor always centered
 set scrolloff=999
 
+" automatically reload file
+set autoread
+
 
 " Ignore spell checking for camelcased items
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486

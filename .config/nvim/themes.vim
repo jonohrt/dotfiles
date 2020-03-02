@@ -40,5 +40,7 @@ hi Search ctermfg=Red
 hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
 
+highlight Sneak guifg=black guibg=#666666 ctermfg=black ctermbg=gray
+
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])

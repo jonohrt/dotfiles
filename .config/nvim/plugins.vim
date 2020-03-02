@@ -20,7 +20,9 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
-Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'jreybert/vimagit'
 Plug 'vimwiki/vimwiki', { 'as': 'vimwiki-dev', 'branch': 'dev' }
 Plug 'tbabej/taskwiki'
 Plug 'mattn/calendar-vim'

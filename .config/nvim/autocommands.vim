@@ -28,3 +28,4 @@ function! SortLines() range
     execute a:firstline . "," . a:lastline . 's/^\d\+\s//'
 endfunction
 
+au FocusGained,BufEnter * :checktime
