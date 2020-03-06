@@ -24,6 +24,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 set background=dark
 colorscheme PaperColor
 " colorscheme gruvbox
+" colorscheme monokai
 
 " colorscheme Apprentice
 " colorscheme hybrid_material
@@ -33,14 +34,12 @@ let g:airline_theme='codedark'
 set encoding=utf8
 let g:airline_powerline_fonts = 1
 let g:onedark_terminal_italics = 1
-hi CursorLineNr guifg=#6291E8
-hi Comment cterm=italic
-hi Search ctermbg=LightYellow
-hi Search ctermfg=Red
-hi Search guibg=#444444 guifg=wheat
+" hi CursorLineNr guifg=#6291E8
+" hi Comment cterm=italic
+" hi Search ctermbg=LightYellow
+" hi Search ctermfg=Red
+" hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
-
-highlight Sneak guifg=black guibg=#666666 ctermfg=black ctermbg=gray
 
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])

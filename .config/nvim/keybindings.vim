@@ -48,7 +48,7 @@ nmap <Leader>wf :FZFVWS<space>
 nmap ✠ <S-CR>
 noremap <S-CR> O<Esc>
 nmap <CR> o<Esc>
-nnoremap <leader>le <C-^>
+" nnoremap <leader>le <C-^>
 
 nnoremap <leader><leader> :noh<CR>
 nnoremap <leader>c gc
@@ -74,8 +74,10 @@ nnoremap <leader>] :GFiles?<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>f: :History:<cr>
 nnoremap <leader>f/ :History/<cr>
-nnoremap <leader>fl :BLines<cr>
-nnoremap <leader>fL :Lines<cr>
+nnoremap <leader>fb :BLines<cr>
+nnoremap <leader>fl :Lines<cr>
+nnoremap <leader>ff :Filetypes<cr>
+
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
 
@@ -85,8 +87,13 @@ nnoremap Y y$
 
 vmap <Leader>s :call SortLines()<cr>
 
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
+"Sneak
+
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map <leader>s <Plug>Sneak_s
+" map <leader>S <Plug>Sneak_S
+
 " tslime
 vmap <Leader>st <Plug>SendSelectionToTmux
 nmap <Leader>st <Plug>NormalModeSendToTmux
@@ -95,11 +102,13 @@ nmap <leader>sr <Plug>SetTmuxVars
 nmap <silent> <leader>d <Plug>DashSearch
 
 
-" nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-" nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 
-" nmap p <plug>(YoinkPaste_p)
-" nmap P <plug>(YoinkPaste_P)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
+
+nmap <leader>lk :bd<cr>
 
 " s for substitute
 nmap s <plug>(SubversiveSubstitute)

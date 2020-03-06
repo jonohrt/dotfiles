@@ -279,3 +279,6 @@ _fzf_complete_git_post() {
 }
 
 # export RUBYOPT='-W:no-deprecated -W:no-experimental'
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

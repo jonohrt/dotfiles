@@ -19,6 +19,5 @@ source ~/.config/nvim/plugin/yoink.vim
 source ~/.config/nvim/plugin/language-client.vim
 source ~/.config/nvim/plugin/ale.vim
 source ~/.config/nvim/plugin/fugitive.vim
-source ~/.config/nvim/plugin/sneak.vim
-
-
+source ~/.config/nvim/plugin/vim-caser.vim
+source ~/.config/nvim/plugin/ranger.vim
