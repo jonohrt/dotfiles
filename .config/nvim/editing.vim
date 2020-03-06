@@ -6,7 +6,6 @@ set hidden
 set exrc
 set secure
 set smartindent
-
 set shell=zsh
 set diffopt+=vertical
 let g:incsearch#auto_nohlsearch = 1
@@ -98,3 +97,5 @@ set autoread
 autocmd Syntax * syn match CamelCase
   \ "\(\<\|_\)\%(\u\l*\)\{2,}\(\>\|_\)\|\<\%(\l\l*\)\%(\u\l*\)\{1,}\>" transparent
   \ containedin=.*Comment.*,.*String.*,VimwikiLink contains=@NoSpell contained
+
+au TermOpen * setlocal nospell
