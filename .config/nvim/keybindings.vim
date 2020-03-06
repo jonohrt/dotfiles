@@ -120,3 +120,7 @@ nnoremap <silent> <leader>lc :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> <leader>ll :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <leader>lg :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
+
+
+" Map Q to quit
+ca Q q
