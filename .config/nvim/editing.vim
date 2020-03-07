@@ -3,7 +3,6 @@ runtime! plugin/sensible.vim
 syntax on
 set nocompatible
 set hidden
-set exrc
 set secure
 set smartindent
 set shell=zsh
@@ -12,8 +11,6 @@ let g:incsearch#auto_nohlsearch = 1
 
 "Stop quickfix prompt for large messages at the cost of less editing room
 set cmdheight=1
-
-set ignorecase smartcase
 
 set mouse=nv
 
