@@ -8,5 +8,6 @@ let g:ale_linters = {'javascript': ['eslint'], 'ruby': ['rubocop'], 'bash':['she
 let g:ale_fixers = {}
 let g:ale_fixers.javascript = [ 'eslint']
 let g:ale_fixers.ruby = ['rubocop']
-let g:ale_ruby_rubocop_options = ''
+" let g:ale_ruby_rubocop_options = ''
 let g:ale_fix_on_save = 1
+
