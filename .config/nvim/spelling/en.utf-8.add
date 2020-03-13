@@ -69,13 +69,15 @@ iso8601
 Zeitwerk
 params
 json
-    # Rails helpfully wraps params for us with a datum wrapper. Careful! _json won't exist unless the body is not an object. See the `wrap_parameters.rb` initializer.
 upsert
 minilith
 Typeable
 Deoplete
 Plugins
 ASTs
+AST
+SQL
+unparses
 assign
 active/!
 active
