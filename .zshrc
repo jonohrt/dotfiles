@@ -155,6 +155,9 @@ alias gc="git checkout"
 alias gcb='git checkout -b'
 alias gco='git checkout $(git branch | fzy)'
 
+alias lioj='ssh-add -D && ssh-add ~/.ssh/github_optijon_rsa'
+alias lij='ssh-add -D && ssh-add ~/.ssh/jonohrt_github_rsa'
+
 # Add autocomplete to the custom tmux functions.
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
 compctl -K tmux-sessions-autofill tk
