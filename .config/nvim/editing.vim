@@ -7,6 +7,8 @@ set secure
 set smartindent
 set shell=zsh
 set diffopt+=vertical
+
+set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 
 "Stop quickfix prompt for large messages at the cost of less editing room

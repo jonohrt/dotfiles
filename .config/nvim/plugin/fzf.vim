@@ -5,4 +5,8 @@ let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{nod
 let $FZF_DEFAULT_OPTS='--bind ctrl-n:down --layout=reverse'
 
 " Border style (rounded / sharp / horizontal)
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.6, 'highlight': 'Todo', 'border': 'rounded' } }
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.9, 'highlight': 'Todo', 'border': 'rounded' } }
+
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = '✠,ctrl-x'
+

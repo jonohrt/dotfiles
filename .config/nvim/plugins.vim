@@ -6,7 +6,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
-
+Plug 'haya14busa/incsearch.vim'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 
 " Plug 'thinca/vim-textobj-function-javascript'
@@ -96,7 +96,8 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'fszymanski/fzf-quickfix'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
-
+Plug 'psliwka/vim-smoothie'
+Plug 'mhinz/vim-startify'
 " Linting
 
 " Quickly run Unix commands.
