@@ -50,7 +50,7 @@ noremap <S-CR> O<Esc>
 nmap <CR> o<Esc>
 " nnoremap <leader>le <C-^>
 
-nnoremap <leader><leader> :noh<CR>
+nnoremap <leader><leader> :nohl<CR>
 nnoremap <leader>c gc
 
 xmap <leader>c  <Plug>Commentary
@@ -71,13 +71,16 @@ nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
 nnoremap <leader>fgc :Commits<cr>
 nnoremap <leader>fgb :BCommits<cr>
+nnoremap <leader>fc :Commands<cr>
 nnoremap <leader>] :GFiles?<cr>
 nnoremap <leader>fh :History<cr>
 nnoremap <leader>f: :History:<cr>
 nnoremap <leader>f/ :History/<cr>
-nnoremap <leader>fb :BLines<cr>
+nnoremap <leader>fbl :BLines<cr>
 nnoremap <leader>fl :Lines<cr>
 nnoremap <leader>ff :Filetypes<cr>
+nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>fbt :BTags<cr>
 
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
@@ -126,3 +129,13 @@ nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
 
 " Map Q to quit
 ca Q q
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
