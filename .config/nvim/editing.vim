@@ -90,6 +90,7 @@ set scrolloff=999
 " automatically reload file
 set autoread
 
+set tags+=./tags;
 
 " Ignore spell checking for camelcased items
 " Borrowed from: https://github.com/teranex/dotvim/blob/master/vimrc#L486
