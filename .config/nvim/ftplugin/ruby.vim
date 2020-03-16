@@ -14,7 +14,7 @@ nmap <leader>slt :call CallRspecLine()<cr>
 
 augroup tags
     au!
-    au BufWritePost *.rb silent !ripper-tags -R --exclude=log
+    au BufWritePost *.rb silent !ripper-tags -R --exclude=coverage
 augroup END
 
 
