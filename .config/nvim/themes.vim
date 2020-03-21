@@ -22,18 +22,18 @@ let g:PaperColor_Theme_Options = {
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 " colorscheme codedark
 set background=dark
-colorscheme PaperColor
-" colorscheme gruvbox
+" colorscheme PaperColor
+colorscheme afterglow
 " colorscheme monokai
 
 " colorscheme Apprentice
 " colorscheme hybrid_material
 " colorscheme hybrid_reverse
-let g:airline_theme='codedark'
+" let g:airline_theme='afterglow'
 " let g:airline_theme='one'
 set encoding=utf8
 let g:airline_powerline_fonts = 1
-let g:onedark_terminal_italics = 1
+" let g:onedark_terminal_italics = 1
 " hi CursorLineNr guifg=#6291E8
 " hi Comment cterm=italic
 " hi Search ctermbg=LightYellow
