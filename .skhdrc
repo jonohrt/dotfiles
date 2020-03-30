@@ -1,7 +1,7 @@
 # open terminal
-shift + cmd + alt + ctrl - l: open /Applications/Vivaldi.app
+shift + cmd + alt + ctrl - v: open /Applications/Vivaldi.app
 shift + cmd + alt + ctrl - f: open /Applications/Firefox.app
-shift + cmd + alt + ctrl - k: open /Applications/Slack.app
+shift + cmd + alt + ctrl - s: open /Applications/Slack.app
 shift + cmd + alt + ctrl - i: open /Applications/iTerm.app
 shift + cmd + alt + ctrl - b : open /Applications/Brave\ Browser.app
 shift + cmd + alt + ctrl - c : open /Applications/Google\ Chrome.app
@@ -11,4 +11,5 @@ shift + cmd + alt + ctrl - m : open /Applications/Messages.app
 shift + cmd + alt + ctrl - o : open /Applications/Microsoft\ Outlook.app
 shift + cmd + alt + ctrl - p : open /Applications/System\ Preferences.app
 shift + cmd + alt + ctrl - a : open /Applications/Utilities/Activity\ Monitor.app
+shift + cmd + alt + ctrl - t : open /Applications/TablePlus.app
 
