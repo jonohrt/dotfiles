@@ -75,11 +75,11 @@
       ]
     },
     {
-      "description": "Hold Tab (⇥) → Hyper Key (⇧⌃⌥⌘)",
+      "description": "Left Control → Hyper Key (⇧⌃⌥⌘)",
       "manipulators": [
         {
           "from": {
-            "key_code": "tab",
+            "key_code": "left_control",
             "modifiers": {
               "optional": [
                 "caps_lock"
@@ -95,11 +95,6 @@
                 "left_control",
                 "left_option"
               ]
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "tab"
             }
           ],
           "to_if_held_down": [
