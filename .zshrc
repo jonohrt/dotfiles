@@ -224,6 +224,13 @@ bindkey "^[[B" history-beginning-search-forward
 bindkey "^P" history-substring-search-up
 bindkey "^N" history-substring-search-down
 
+my-backward-delete-word() {
+    local WORDCHARS=${WORDCHARS/\//}
+    zle backward-delete-word
+}
+zle -N my-backward-delete-word
+bindkey '^W' my-backward-delete-word
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
