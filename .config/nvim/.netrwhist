@@ -1,12 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/johrt/Projects/tesla/projects/tesla-site/app/services/calculation'
+let g:netrw_dirhist_7='/Users/johrt/Projects/tesla/projects/tesla-site/spec'
+let g:netrw_dirhist_6='/Users/johrt/.zprezto'
+let g:netrw_dirhist_5='/Users/johrt/Projects/tesla/projects/tesla-site/app/controllers'
 let g:netrw_dirhist_4='/Users/johrt/Projects/tesla/projects/tesla-proxy'
 let g:netrw_dirhist_3='/Users/johrt/Projects/tesla'
 let g:netrw_dirhist_2='/Users/johrt/Projects/tesla/projects'
 let g:netrw_dirhist_1='/Users/johrt/Projects/tesla/projects/tesla-proxy'
 let g:netrw_dirhist_0='/Users/johrt/.tmux'
 let g:netrw_dirhist_9='/Users/johrt/Projects/tesla/projects/tesla-ui/source/javascript/api'
-let g:netrw_dirhist_8='/Users/johrt/Projects/tesla/projects/tesla-ui/source/javascript'
-let g:netrw_dirhist_7='/Users/johrt/Projects/tesla/projects/tesla-ui/source'
-let g:netrw_dirhist_6='/Users/johrt/Projects/tesla/projects/tesla-ui'
-let g:netrw_dirhist_5='/Users/johrt/.zprezto'
