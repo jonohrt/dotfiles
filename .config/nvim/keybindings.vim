@@ -143,3 +143,4 @@ map g# <Plug>(incsearch-nohl-g#)
 nnoremap <leader>b :b <C-d>
 nnoremap <leader>n :Buffers<cr> <ctrl-j>
 
+nnoremap Q @@
