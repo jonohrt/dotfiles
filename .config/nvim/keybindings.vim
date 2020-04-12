@@ -1,4 +1,5 @@
 " Use visual line for j and k
+nnoremap <leader>fa :Rg<space>
 nmap j gj
 nmap k gk
 
@@ -65,7 +66,7 @@ nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
 
 nnoremap <leader>[ :GFiles<cr>
 nnoremap <leader>o :call fzf#vim#files('', fzf#vim#with_preview('right'))<cr>
-nnoremap <leader>p :call fzf#vim#buffers('', fzf#vim#with_preview('right'))<cr>
+nnoremap <leader>p :Buffers<cr>
 nnoremap <leader>] :call fzf#vim#gfile?('', fzf#vim#with_preview('right'))<cr>
 nnoremap <leader>fa :Rg<space>
 nnoremap <leader>fs :Snippets<cr>
@@ -141,3 +142,4 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 nnoremap Q @@
+noremap <leader>g :ls<cr>:b<space>
