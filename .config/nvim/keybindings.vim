@@ -49,7 +49,7 @@ nmap <Leader>wf :FZFVWS<space>
 nmap ✠ <S-CR>
 noremap <S-CR> O<Esc>
 nmap <CR> o<Esc>
-" nnoremap <leader>le <C-^>
+nnoremap <leader>le <C-^>
 
 nnoremap <leader><leader> :nohl<CR>
 nnoremap <leader>c gc
@@ -140,6 +140,9 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+nnoremap <leader>b :b <C-d>
+nnoremap <leader>n :Buffers<cr> <ctrl-j>
 
 nnoremap Q @@
 noremap <leader>g :ls<cr>:b<space>
