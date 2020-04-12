@@ -37,7 +37,6 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'tmux' \
-  'fasd' \
   'utility' \
   'ssh' \
   'completion' \
@@ -83,7 +82,7 @@ zstyle ':prezto:module:fzf' completion 'yes'
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'emacs'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 # Auto convert .... to ../..
 # zstyle ':prezto:module:editor' dot-expansion 'yes'
 
