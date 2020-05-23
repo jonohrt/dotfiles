@@ -56,7 +56,7 @@
       ]
     },
     {
-      "description": "Toggle caps_lock by pressing left_shift + right_shift at the same time",
+      "description": "Toggle caps_lock by pressing left_shift + left_command at the same time",
       "manipulators": [
         {
           "type": "basic",
@@ -64,7 +64,7 @@
             "key_code": "left_shift",
             "modifiers": {
               "mandatory": [
-                "right_shift"
+                "left_command"
               ],
               "optional": [
                 "caps_lock"
