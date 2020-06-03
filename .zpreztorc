@@ -49,11 +49,12 @@ zstyle ':prezto:load' pmodule \
   'alias-tips' \
   'contrib-clipboard' \
   'contrib-kubernetes' \
-  'enhancd' \
-  'prompt'
+  'prompt' \
+  'enhancd'
 
 zstyle ":prezto:module:enhancd" command "fzy"
 zstyle ":prezto:module:enhancd" command "cd"
+export ENHANCD_DISABLE_DOT=1
 
 
 # Use keybindings
