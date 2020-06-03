@@ -36,7 +36,7 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude "!{.git,node_modules}/*" --color=always'
+export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude ".git" --exclude "node_modules" --color=always'
 export FZF_DEFAULT_OPTS="--ansi" #-jheight=70% --preview='bat {}' --preview-window=right:60%:wrap"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
