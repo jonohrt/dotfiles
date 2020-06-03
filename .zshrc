@@ -123,6 +123,7 @@ tmux-and-tmuxinator-sessions-autofill() {
 }
 
 
+alias -g kbx='kubectx'
 alias -g kec='kubectl edit configmap'
 alias -g kaf='kubectl apply -f'
 alias -g kcuc='kubectl config use-context'
@@ -329,7 +330,7 @@ fzf_gt() {
     --preview 'git show --color=always {} | head -'$LINES
 }
 
-fzf_gh() {
+fzf_gg() {
   is_in_git_repo || return
   git log --date=short --format="%C(green)%C(bold)%cd %C(auto)%h%d %s (%an)" --graph --color=always |
   fzf-down --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
@@ -371,5 +372,5 @@ bind-git-helper() {
 }
 
 bindkey -r "^G"
-bind-git-helper f b t r h
+bind-git-helper f b t g r
 unset -f bind-git-helper
