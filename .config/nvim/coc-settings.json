@@ -4,7 +4,7 @@
   "javascript.suggest.enabled": false,
   "javascript.validate.enable": false,
   "sh.enable": true,
-  "solargraph.commandPath": "/Users/johrt/.rbenv/shims/solargraph"
-
+  "solargraph.commandPath": "/Users/johrt/.rbenv/shims/solargraph",
+  "solargraph.useBundler": true
 
 }

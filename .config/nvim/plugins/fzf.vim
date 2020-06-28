@@ -9,4 +9,3 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.9, 'highlight': 'Todo',
 
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = '✠,ctrl-x'
-let g:fzf_buffers_jump = 1
