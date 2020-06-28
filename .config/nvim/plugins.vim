@@ -82,6 +82,7 @@ Plug 'junegunn/fzf'
 
 " Linting
 
+Plug 'kchmck/vim-coffee-script'
 " Quickly run Unix commands.
 Plug 'tpope/vim-eunuch'
 

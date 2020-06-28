@@ -9,3 +9,26 @@ let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.9, 'highlight': 'Todo',
 
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = '✠,ctrl-x'
+
+" FZF
+
+nnoremap <leader>[ :GFiles<cr>
+nnoremap <leader>o :Files<cr>
+nnoremap <leader>p :Buffers<cr>
+nnoremap <leader>fa :Rg<space>
+nnoremap <leader>fs :Snippets<cr>
+nnoremap <leader>fgc :Commits<cr>
+nnoremap <leader>fgb :BCommits<cr>
+nnoremap <leader>fc :Commands<cr>
+nnoremap <leader>] :GFiles?<cr>
+nnoremap <leader>fh :History<cr>
+nnoremap <leader>f: :History:<cr>
+nnoremap <leader>f/ :History/<cr>
+nnoremap <leader>fbl :BLines<cr>
+nnoremap <leader>fl :Lines<cr>
+nnoremap <leader>ff :Filetypes<cr>
+nnoremap <leader>ft :Tags<cr>
+nnoremap <leader>fbt :BTags<cr>
+
+nmap <Leader>t :BTags<CR>
+nmap <Leader>T :Tags<CR>

@@ -63,29 +63,6 @@ nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
 nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
 
-" FZF
-
-nnoremap <leader>[ :GFiles<cr>
-nnoremap <leader>o :call fzf#vim#files('', fzf#vim#with_preview('right'))<cr>
-nnoremap <leader>p :Buffers<cr>
-nnoremap <leader>] :call fzf#vim#gfile?('', fzf#vim#with_preview('right'))<cr>
-nnoremap <leader>fa :Rg<space>
-nnoremap <leader>fs :Snippets<cr>
-nnoremap <leader>fgc :Commits<cr>
-nnoremap <leader>fgb :BCommits<cr>
-nnoremap <leader>fc :Commands<cr>
-nnoremap <leader>] :GFiles?<cr>
-nnoremap <leader>fh :History<cr>
-nnoremap <leader>f: :History:<cr>
-nnoremap <leader>f/ :History/<cr>
-nnoremap <leader>fbl :BLines<cr>
-nnoremap <leader>fl :Lines<cr>
-nnoremap <leader>ff :Filetypes<cr>
-nnoremap <leader>ft :Tags<cr>
-nnoremap <leader>fbt :BTags<cr>
-
-nmap <Leader>t :BTags<CR>
-nmap <Leader>T :Tags<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -137,6 +114,8 @@ nmap S <plug>(SubversiveSubstituteToEndOfLine)
 " Map Q to quit
 ca Q q
 
+noremap q: :q
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -147,8 +126,6 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-nnoremap <leader>b :b <C-d>
-nnoremap <leader>n :Buffers<cr> <ctrl-j>
 
 nnoremap Q @@
 noremap <leader>g :ls<cr>:b<space>
