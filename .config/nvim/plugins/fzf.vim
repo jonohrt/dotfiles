@@ -32,3 +32,14 @@ nnoremap <leader>fbt :BTags<cr>
 
 nmap <Leader>t :BTags<CR>
 nmap <Leader>T :Tags<CR>
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-w> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-b> <plug>(fzf-complete-buffer-line)

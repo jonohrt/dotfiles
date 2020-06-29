@@ -53,40 +53,15 @@ nnoremap <leader>le <C-^>
 nnoremap <leader><leader> :nohl<CR>
 nnoremap <leader>c gc
 
-xmap <leader>c  <Plug>Commentary
-nmap <leader>c  <Plug>Commentary
-omap <leader>c  <Plug>Commentary
-nmap <leader>cc <Plug>CommentaryLine
-nmap <leader>cu <Plug>Commentary<Plug>Commentary
-
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
 nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
-
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-w> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-imap <c-x><c-b> <plug>(fzf-complete-buffer-line)
 
 nnoremap <leader>k :bd<cr>
 nnoremap <leader>K :bd!<cr>
 nnoremap Y y$
 
 vmap <Leader>s :call SortLines()<cr>
-
-"Sneak
-
-" map f <Plug>Sneak_f
-" map F <Plug>Sneak_F
-" map <leader>s <Plug>Sneak_s
-" map <leader>S <Plug>Sneak_S
 
 " tslime
 vmap <Leader>st <Plug>SendSelectionToTmux
@@ -114,6 +89,7 @@ nmap S <plug>(SubversiveSubstituteToEndOfLine)
 " Map Q to quit
 ca Q q
 
+" Map the command history to quit
 noremap q: :q
 
 map /  <Plug>(incsearch-forward)
