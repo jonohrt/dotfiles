@@ -1,6 +1,7 @@
 " Configure the language servers
 let g:LanguageClient_serverCommands = {
-  \ 'javascript': [ './node_modules/.bin/javascript-typescript-stdio' ],
+  \ 'javascriptreact': [ 'typescript-language-server', '--stdio' ],
+  \ 'javascript': [ 'typescript-language-server', '--stdio' ],
   \ 'ruby': [ 'bundle', 'exec', 'solargraph', 'stdio' ],
   \ }
 

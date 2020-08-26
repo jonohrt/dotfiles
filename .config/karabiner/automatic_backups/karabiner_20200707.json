@@ -8,15 +8,15 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 100,
+                    "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 500,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Tap CapsLock (⇪) → Escape (⎋); Hold CapsLock (⇪) → Control (⌃)",
+                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
@@ -29,8 +29,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control",
-                                        "lazy": true
+                                        "key_code": "left_control"
                                     }
                                 ],
                                 "to_if_alone": [
@@ -38,9 +37,41 @@
                                         "key_code": "escape"
                                     }
                                 ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Left Control → Hyper Key (⇧⌃⌥⌘)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "lazy": true,
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
+                                    }
+                                ],
                                 "to_if_held_down": [
                                     {
-                                        "key_code": "left_control"
+                                        "key_code": "left_shift",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -48,30 +79,108 @@
                         ]
                     },
                     {
-                        "description": "Change enter to control if pressed with other keys",
+                        "description": "Vi Mode [left_control + hjkl]",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "return_or_enter",
+                                    "key_code": "h",
                                     "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ],
                                         "optional": [
-                                            "any"
+                                            "caps_lock",
+                                            "command",
+                                            "option",
+                                            "shift",
+                                            "fn"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command",
-                                        "modifiers": [
-                                            "left_shift",
-                                            "left_control",
-                                            "left_option"
-                                        ]
+                                        "key_code": "left_arrow"
                                     }
                                 ],
-                                "to_if_alone": [
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "command",
+                                            "option",
+                                            "shift",
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
                                     {
-                                        "key_code": "return_or_enter"
+                                        "key_code": "down_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "command",
+                                            "option",
+                                            "shift",
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command",
+                                            "left_control",
+                                            "left_option",
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock",
+                                            "command",
+                                            "option",
+                                            "shift",
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow"
                                     }
                                 ],
                                 "type": "basic"

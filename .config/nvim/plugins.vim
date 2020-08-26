@@ -20,6 +20,7 @@ Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 " Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
@@ -78,7 +79,7 @@ Plug 'vim-ruby/vim-ruby'
 
 " FZF
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Linting
 
