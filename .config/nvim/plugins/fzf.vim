@@ -26,7 +26,7 @@ nnoremap <leader>f: :History:<cr>
 nnoremap <leader>f/ :History/<cr>
 nnoremap <leader>fbl :BLines<cr>
 nnoremap <leader>fl :Lines<cr>
-nnoremap <leader>ff :Filetypes<cr>
+nnoremap <leader>fl :Filetypes<cr>
 nnoremap <leader>ft :Tags<cr>
 nnoremap <leader>fbt :BTags<cr>
 
