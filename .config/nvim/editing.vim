@@ -49,7 +49,7 @@ set scrolloff=2            " Ensure there's always a little space above and belo
 set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
 set inccommand=nosplit     " Incrementally show effects of commands
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Spelling
 set spell spelllang=en_us
