@@ -1,11 +1,13 @@
 call plug#begin('~/.config/nvim/bundle')
 
+Plug 'vimwiki/vimwiki'
 " Plug 'vim-scripts/DrawIt'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'haya14busa/incsearch.vim'
+
 Plug 'git@github.com:tpope/vim-projectionist.git'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -47,7 +49,7 @@ Plug 'dense-analysis/ale'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
 "
 Plug 'itspriddle/vim-shellcheck'
 " Sets the project root to the current Git repository by default
@@ -68,6 +70,11 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'slim-template/vim-slim'
 Plug 'othree/html5.vim'
+
+" Clojure
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'Olical/conjure', { 'branch': 'develop' }
 
 " Snippits
 Plug 'SirVer/ultisnips'
