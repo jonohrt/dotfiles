@@ -10,7 +10,7 @@ source ~/.config/nvim/plugins/language-client.vim
 source ~/.config/nvim/plugins/delimitMate.vim
 source ~/.config/nvim/plugins/deoplete.vim
 source ~/.config/nvim/plugins/vimwiki.vim
-source ~/.config/nvim/pluginm/fzf.vim
+source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/targets.vim
 source ~/.config/nvim/plugins/ultisnips.vim
