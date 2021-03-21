@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/bundle')
 
+Plug 'stsewd/fzf-checkout.vim'
 " Plug 'vim-scripts/DrawIt'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-abolish'
@@ -19,12 +20,15 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'melonmanchan/vim-tmux-resizer'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
+Plug 'vimwiki/vimwiki'
+Plug 'tools-life/taskwiki'
+Plug 'blindFS/vim-taskwarrior'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 " Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
-
+Plug 'junegunn/vim-emoji'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Language servers
 Plug 'autozimu/LanguageClient-neovim', {
   \ 'branch': 'next',
@@ -47,7 +51,7 @@ Plug 'dense-analysis/ale'
 Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
 "
 Plug 'itspriddle/vim-shellcheck'
 " Sets the project root to the current Git repository by default
@@ -95,7 +99,10 @@ Plug 'vim-airline/vim-airline'
 " Highlight CSS colors
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'danilo-augusto/vim-afterglow'
+
+" Scratchpad
+Plug 'Konfekt/vim-scratchpad'
 call plug#end()
