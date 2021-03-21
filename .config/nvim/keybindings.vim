@@ -28,7 +28,7 @@ nmap <silent> t<C-a> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
-nnoremap <leader>w :w<cr>
+" nnoremap <leader>w :w<cr>
 
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
@@ -37,13 +37,9 @@ endfunction"}}}
 
 " tnoremap <C-n> <C-\><C-n>
 
-nnoremap 0 ^
-nnoremap ^ 0
 nmap <silent> [i <Plug>(ale_previous_wrap)
 nmap <silent> ]i <Plug>(ale_next_wrap)
 
-" Vimwiki search
-nmap <Leader>wf :FZFVWS<space>
 
 nmap ✠ <S-CR>
 noremap <S-CR> O<Esc>
@@ -82,7 +78,7 @@ nmap <leader>lk :bd<cr>
 " s for substitute
 nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
-nmap S <plug>(SubversiveSubstituteToEndOfLine)
+" nmap S <plug>(SubversiveSubstituteToEndOfLine)
 
 
 
