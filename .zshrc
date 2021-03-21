@@ -13,7 +13,8 @@ fpath=("/usr/local/bin/" $fpath)
 export EDITOR="nvim"
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
-export TERM='xterm-256color-italic';
+# export TERM='xterm-256color-italic';
+export TERM='xterm-256color'
 # 10ms for key sequences
 export KEYTIMEOUT=1
 
@@ -36,7 +37,7 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude ".git" --exclude "node_modules" --color=always'
+export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude ".git" --exclude "node_modules"'
 # export FZF_DEFAULT_OPTS="--ansi" #-jheight=70% --preview='bat {}' --preview-window=right:60%:wrap"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
@@ -160,6 +161,7 @@ alias gco='git checkout $(git branch | fzy)'
 alias lioj='ssh-add -D && ssh-add ~/.ssh/github_optijon_rsa'
 alias lij='ssh-add -D && ssh-add ~/.ssh/jonohrt_github_rsa'
 alias hprs='hub pr show'
+alias gb='git branch --sort=-committerdate'
 
 # Add autocomplete to the custom tmux functions.
 compctl -K tmux-and-tmuxinator-sessions-autofill ta

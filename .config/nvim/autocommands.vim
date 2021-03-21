@@ -29,3 +29,4 @@ function! SortLines() range
 endfunction
 
 au FocusGained,BufEnter * :checktime
+autocmd BufReadPost fugitive://* set bufhidden=delete
