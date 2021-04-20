@@ -10,36 +10,18 @@ set termguicolors
 
 set guicursor=n-v-c:block,i-ci-ve:ver25-blinkoff400-blinkon250,r-cr:hor20,o:hor50
 
-let g:PaperColor_Theme_Options = {
-  \   'theme': {
-  \     'default.dark': {
-  \       'override' : {
-  \         'color07' : ['#AEDBFE']
-  \       }
-  \     }
-  \   }
-  \ }
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-" colorscheme codedark
-set background=dark
-" colorscheme PaperColor
-colorscheme afterglow
-" colorscheme monokai
 
-" colorscheme Apprentice
-" colorscheme hybrid_material
-" colorscheme hybrid_reverse
-" let g:airline_theme='afterglow'
-" let g:airline_theme='one'
+set background=dark
+
+colorscheme afterglow
 set encoding=utf8
 let g:airline_powerline_fonts = 1
-" let g:onedark_terminal_italics = 1
-" hi CursorLineNr guifg=#6291E8
-" hi Comment cterm=italic
-" hi Search ctermbg=LightYellow
-" hi Search ctermfg=Red
-" hi Search guibg=#444444 guifg=wheat
 highlight Comment gui=italic
+
+" Fix background colors for floating window in conjure.
+highlight NormalFloat ctermbg=black guibg=black
 
 call airline#parts#define_function('foo', 'SpinnerText')
 let g:airline_section_y = airline#section#create_right(['ffenc','foo'])
+

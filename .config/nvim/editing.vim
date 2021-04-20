@@ -49,7 +49,7 @@ set scrolloff=2            " Ensure there's always a little space above and belo
 set splitbelow             " Open horizontal splits below the current pane
 set splitright             " Open vertical splits to the right of the current pane
 set inccommand=nosplit     " Incrementally show effects of commands
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " Spelling
 set spell spelllang=en_us
@@ -65,7 +65,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " Leader mapping
 let mapleader = " "
-
+let maplocalleader = "\<space>\<space>"
 " When the type of shell script is /bin/sh, assume a POSIX-compatible shell for syntax highlighting
 " purposes.
 let g:is_posix = 1
