@@ -7,6 +7,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'haya14busa/incsearch.vim'
+
 Plug 'git@github.com:tpope/vim-projectionist.git'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -72,6 +73,11 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'slim-template/vim-slim'
 Plug 'othree/html5.vim'
+
+" Clojure
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'Olical/conjure', { 'branch': 'develop' }
 
 " Snippits
 Plug 'SirVer/ultisnips'
