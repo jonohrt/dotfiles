@@ -1,8 +1,6 @@
 call plug#begin('~/.config/nvim/bundle')
 
 Plug 'stsewd/fzf-checkout.vim'
-" Plug 'vim-scripts/DrawIt'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
@@ -12,103 +10,111 @@ Plug 'git@github.com:tpope/vim-projectionist.git'
 
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'farmergreg/vim-lastplace'
-Plug 'https://github.com/adelarsq/vim-matchit'
+"Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'svermeulen/vim-yoink'
 Plug 'svermeulen/vim-subversive'
-Plug 'janko-m/vim-test'
-Plug 'git@github.com:Galooshi/vim-import-js.git'
+"Plug 'janko-m/vim-test'
+"Plug 'git@github.com:Galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'melonmanchan/vim-tmux-resizer'
-Plug 'wellle/tmux-complete.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vimwiki/vimwiki'
-Plug 'tools-life/taskwiki'
-Plug 'blindFS/vim-taskwarrior'
-Plug 'mattn/emmet-vim'
+"Plug 'melonmanchan/vim-tmux-resizer'
+"Plug 'wellle/tmux-complete.vim'
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'vimwiki/vimwiki'
+"Plug 'tools-life/taskwiki'
+"Plug 'blindFS/vim-taskwarrior'
+"Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
-" Plug 'mxw/vim-jsx'
+"" Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/vim-emoji'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" Language servers
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-" Now Vim can save when iTerm 2 loses focus, even if it's inside tmux!
+"Plug 'junegunn/vim-emoji'
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+"" Language servers
+"Plug 'autozimu/LanguageClient-neovim', {
+"  \ 'branch': 'next',
+"  \ 'do': 'bash install.sh',
+"  \ }
+"" Now Vim can save when iTerm 2 loses focus, even if it's inside tmux!
 Plug 'sjl/vitality.vim'
 Plug 'ericbn/vim-relativize'
 
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'TimUntersberger/neogit'
+Plug 'sindrets/diffview.nvim'
 
-" Enable Gbrowse
+Plug 'hrsh7th/nvim-compe'
+"" Enable Gbrowse
 Plug 'tpope/vim-rhubarb'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
+
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 Plug 'dense-analysis/ale'
-Plug 'Quramy/vim-js-pretty-template'
+Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
+"Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-" Plug 'Raimondi/delimitMate'
-"
-Plug 'itspriddle/vim-shellcheck'
-" Sets the project root to the current Git repository by default
+"" Plug 'Raimondi/delimitMate'
+""
+"Plug 'itspriddle/vim-shellcheck'
+"" Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'francoiscabrol/ranger.vim'
 Plug 'tpope/vim-endwise'
 
-" Shows the current git diff in the gutter.
+"" Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 
-" Language syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'gavocanov/vim-js-indent'
-Plug 'elzr/vim-json'
-Plug 'othree/yajs.vim'
-Plug 'othree/es.next.syntax.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'slim-template/vim-slim'
-Plug 'othree/html5.vim'
 
-" Clojure
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'Olical/conjure', { 'branch': 'develop' }
+"" Language syntax highlighting
+"Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'gavocanov/vim-js-indent'
+"Plug 'elzr/vim-json'
+"Plug 'othree/yajs.vim'
+"Plug 'othree/es.next.syntax.vim'
+"Plug 'othree/javascript-libraries-syntax.vim'
+"Plug 'slim-template/vim-slim'
+"Plug 'othree/html5.vim'
 
-" Snippits
+"" Clojure
+"Plug 'guns/vim-sexp'
+"Plug 'tpope/vim-sexp-mappings-for-regular-people'
+"Plug 'Olical/conjure', { 'branch': 'develop' }
+
+"" Snippits
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Ruby
+"" Ruby
 Plug 'tpope/vim-rails'
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
 
-" FZF
+"" FZF
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" Linting
+"" Linting
 
-Plug 'kchmck/vim-coffee-script'
-" Quickly run Unix commands.
+"Plug 'kchmck/vim-coffee-script'
+"" Quickly run Unix commands.
 Plug 'tpope/vim-eunuch'
 
-" " Automatically resize open splits so the current is the biggest
+"" " Automatically resize open splits so the current is the biggest
 Plug 'vim-airline/vim-airline'
 
-" Themes
-"
-" Highlight CSS colors
-Plug 'ap/vim-css-color'
+"" Themes
+""
 Plug 'ryanoasis/vim-devicons'
-" Plug 'nanotech/jellybeans.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'danilo-augusto/vim-afterglow'
 
-" Scratchpad
-Plug 'Konfekt/vim-scratchpad'
+"" Scratchpad
+"Plug 'Konfekt/vim-scratchpad'
 call plug#end()
