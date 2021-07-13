@@ -82,6 +82,7 @@ Plug 'Olical/conjure', { 'branch': 'develop' }
 " Snippits
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'Trevoke/ultisnips-rspec'
 
 " Ruby
 Plug 'tpope/vim-rails'

@@ -205,12 +205,6 @@ alias dfl='dotfiles '
 alias kx="kubectx"
 alias gco="git branch | cut -c 3- | fzy | xargs git checkout"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
@@ -376,3 +370,9 @@ bind-git-helper() {
 bindkey -r "^G"
 bind-git-helper f b t g r
 unset -f bind-git-helper
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
