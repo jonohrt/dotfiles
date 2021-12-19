@@ -18,20 +18,39 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "SauceCodePro Nerd Font" :size 20))
+(setq doom-font (font-spec :family "Inconsolata Nerd Font" :size 23 ))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-one)
-
+(setq doom-theme 'doom-dark+)
+;; (setq-default line-spacing 3)
+;; (setq default-text-properties '(line-spacing 0.05 line-height 1.05))
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/org/")
+
+(global-set-key (kbd "C-h")  'windmove-left)
+(global-set-key (kbd "C-l") 'windmove-right)
+(global-set-key (kbd "C-k")    'windmove-up)
+(global-set-key (kbd "C-j")  'windmove-down)
+
+;; Enable text wrapping.
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
 
 ;; If you want to change the style of line numbers, change this to `relative' or
 ;; `nil' to disable it:
 (setq display-line-numbers-type t)
 
+(after! doom-thems
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -50,8 +69,6 @@
 ;; they are implemented.
 (require 'rubocopfmt)
 (setq rubocopfmt-on-save-use-lsp-format-buffer t)
-(require 'projector)
-(setq alert-default-style 'notifier)
 
 (add-hook 'ruby-mode-hook #'rubocopfmt-mode)
 
@@ -59,11 +76,11 @@
       evil-insert-state-cursor '(bar "medium sea green")
       evil-visual-state-cursor '(hollow "orange"))
 
-(remove-hook 'doom-first-input-hook #'evil-snipe-mode)
+;; (remove-hook 'doom-first-input-hook #'evil-snipe-mode)
 
 (require 'evil-replace-with-register)
 ;; change default key bindings (if you want) HERE
-(setq evil-replace-with-register-key (kbd "s"))
+(setq evil-replace-with-register-key (kbd "gr"))
 (evil-replace-with-register-install)
 (map! :leader :desc "Clear highlights" "s c" #'evil-ex-nohighlight)
 
@@ -91,7 +108,7 @@
       "C-o" 'yas-expand
       "C-p" 'dabbrev-expand
       "RET" 'company-complete-if-selected)
-(setq display-line-numbers 'relative)
+(setq display-line-numbers-type 'relative)
 (global-spell-fu-mode)
 
 (defun j-company-remove-dabbrev-dups-keep-order (candidates)
@@ -149,8 +166,46 @@
                #'j-company-remove-dabbrev-dups-keep-order))
 
 (setq spell-fu-ignore-modes (list 'dired-mode))
-
+(setq ispell-dictionary "en_US")
 (with-eval-after-load 'evil
     (defalias #'forward-evil-word #'forward-evil-symbol)
     ;; make evil-search-word look for symbol rather than word boundaries
     (setq-default evil-symbol-word-search t))
+
+(setq lsp-ui-doc-enable nil)
+(setq-default fill-column 100)
+(add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
+(map! :leader :desc "jump to ruby begin block" "m j b" 'ruby-beginning-of-block)
+(map! :leader :desc "jump to ruby begin block" "m j e" 'ruby-end-of-block)
+
+(require 'epa-file)
+(custom-set-variables '(epg-gpg-program  "/usr/local/bin/gpg"))
+(epa-file-enable)
+
+(setq flycheck-check-syntax-automatically '(save mode-enabled))
+
+;; This is usually just annoying
+(setq compilation-ask-about-save nil)
+
+;; No confirm on exit
+(setq confirm-kill-emacs nil)
+
+(after! so-long
+  (setq so-long-threshold 10000))
+
+;; Truncate compiilation buffers, otherwise Emacs gets slow
+;; https://stackoverflow.com/questions/11239201/can-i-limit-the-length-of-the-compilation-buffer-in-emacs
+(add-hook 'compilation-filter-hook 'comint-truncate-buffer)
+(setq comint-buffer-maximum-size 2000)
+
+(setq recentf-max-saved-items 10000)
+
+(map! :leader :desc "Find file in project" "p f" 'counsel-fzf)
+(setq doom-modeline-vcs-max-length 199)
+
+(define-key (current-global-map)
+  [remap async-shell-command] 'with-editor-async-shell-command)
+(define-key (current-global-map)
+  [remap shell-command] 'with-editor-shell-command)
+
+(add-hook 'vterm-mode-hook  'with-editor-export-editor)

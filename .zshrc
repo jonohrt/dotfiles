@@ -10,7 +10,7 @@ zstyle ':prezto:module:prompt' theme 'wikimatze'
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)
 
-export EDITOR="nvim"
+#export EDITOR="emacs"
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
 # export TERM='xterm-256color-italic';
@@ -175,7 +175,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools:/Users/jonohrt/Projects/gssl/kube
 export ONFIDO_API_KEY=test_RrixH0WC5PFMaTIkisZcYsbnu8CfRW8S
 # export DATABASE_URL=postgres://ufssjf6hl483bs:pfkt9u45cosat35er99mskdnl5m@ec2-52-55-241-220.compute-1.amazonaws.com:5432/d6nte8tnopamd1
 
-export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
+export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:$HOME/.emacs.d/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
 
 
 # Start rbenv

@@ -22,7 +22,7 @@
        (company +childframe +tng)           ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy +prescient +icons +rg)               ; a search engine for love and life
+       (ivy +fuzzy +prescient +icons +fzf)               ; a search engine for love and life
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -89,7 +89,7 @@
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
        ;;direnv
-       ;;docker
+       docker
        ;;editorconfig      ; let someone else argue about tabs vs spaces
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
@@ -98,7 +98,7 @@
         +docsets)        ; ...or in Dash docsets locally
        lsp
        ;;macos             ; MacOS-specific commands
-       magit             ; a git porcelain for Emacs
+       (magit +forge)      ; a git porcelain for Emacs
        ;;make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements
@@ -184,3 +184,4 @@
        (default +bindings +smartparens))
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(windmove-default-keybindings)
