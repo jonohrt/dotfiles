@@ -4,7 +4,11 @@ GEM
     CFPropertyList (2.2.0)
     alfredo (0.1.2)
       nokogiri
-    nokogiri (1.5.9)
+    mini_portile2 (2.8.0)
+    nokogiri (1.13.4)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    racc (1.6.0)
 
 PLATFORMS
   ruby
