@@ -18,12 +18,12 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Inconsolata Nerd Font" :size 23 ))
+(setq doom-font (font-spec :family "Iosevka SS09" :size 23 ))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq doom-theme 'doom-dark+)
+(setq doom-theme 'doom-monokai-ristretto)
 ;; (setq-default line-spacing 3)
 ;; (setq default-text-properties '(line-spacing 0.05 line-height 1.05))
 ;; If you intend to use org, it is recommended you change this!
@@ -96,7 +96,7 @@
 (after! company
   (setq company-dabbrev-downcase 0)
   (setq company-show-numbers t)
-  (setq company-idle-delay 0))
+  (setq company-idle-delay 0.2))
 
 (add-hook 'after-init-hook 'company-tng-mode)
 
@@ -209,3 +209,11 @@
   [remap shell-command] 'with-editor-shell-command)
 
 (add-hook 'vterm-mode-hook  'with-editor-export-editor)
+(setq ob-mermaid-cli-path "/usr/local/bin/mmdc")
+ (setq plantuml-default-exec-mode 'executable)
+
+(setq +org-capture-journal-file "/Users/johrt/org/work-journal.org")
+
+(setq mouse-drag-copy-region t)
+
+(setq magit-list-refs-sortby "-creatordate")

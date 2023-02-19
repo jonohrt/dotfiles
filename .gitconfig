@@ -76,3 +76,5 @@
 #  template = /Users/johrt/.stCommitMsg
 [push]
 	default = current
+[github]
+	user = optijon

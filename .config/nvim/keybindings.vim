@@ -11,6 +11,10 @@ cnoremap $m <CR>:m''<CR>
 cnoremap $M <CR>:M''<CR>
 cnoremap $d <CR>:d<CR>`
 
+nnoremap <Leader>bl :e#<cr>
+nnoremap <Leader>bk :bdelete<cr>
+nnoremap <Leader>bK :bdelete!<cr>
+
 nnoremap <expr> g<c-v> '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 nnoremap yon :RelativizeToggle<cr>
@@ -29,7 +33,7 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 " nnoremap <leader>w :w<cr>
-
+:tnoremap <Esc> <C-\><C-n>
 function! s:check_back_space() abort "{{{
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -51,7 +55,7 @@ nnoremap <leader>c gc
 
 nnoremap <leader>vi :e ~/.config/nvim/init.vim<cr>
 
-nnoremap <leader>fn :!echo -n % \| pbcopy<cr>
+nnoremap <leader>fy :!echo -n % \| pbcopy<cr>
 
 nnoremap <leader>k :bd<cr>
 nnoremap <leader>K :bd!<cr>
@@ -80,6 +84,7 @@ nmap s <plug>(SubversiveSubstitute)
 nmap ss <plug>(SubversiveSubstituteLine)
 " nmap S <plug>(SubversiveSubstituteToEndOfLine)
 
+nmap <Leader>. :e %:h<cr>
 
 
 " Map Q to quit
@@ -101,3 +106,9 @@ map g# <Plug>(incsearch-nohl-g#)
 
 nnoremap Q @@
 noremap <leader>g :ls<cr>:b<space>
+let g:kitty_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :KittyNavigateLeft<cr>
+nnoremap <silent> <C-j> :KittyNavigateDown<cr>
+nnoremap <silent> <C-k> :KittyNavigateUp<cr>
+nnoremap <silent> <C-l> :KittyNavigateRight<cr>

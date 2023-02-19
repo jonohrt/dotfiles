@@ -6,11 +6,13 @@ fi
 plugins=(git osx ruby bundler brew gem rbates history-substring-search)
 zstyle ':prezto:module:prompt' theme 'wikimatze'
 
+set -o vi
 
+source /Users/johrt/.fzf-git.sh.git/fzf-git.sh
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)
 
-#export EDITOR="emacs"
+export EDITOR="nvim"
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
 # export TERM='xterm-256color-italic';
@@ -37,7 +39,7 @@ bindkey '^Z' fancy-ctrl-z
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!{.git,node_modules}/*"'
-export FZF_DEFAULT_COMMAND='fd . --follow --hidden --exclude ".git" --exclude "node_modules"'
+export FZF_DEFAULT_COMMAND='fd . --follow --hidden --no-ignore-vcs --exclude ".git" --exclude "node_modules"'
 # export FZF_DEFAULT_OPTS="--ansi" #-jheight=70% --preview='bat {}' --preview-window=right:60%:wrap"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
@@ -161,7 +163,9 @@ alias gco='git checkout $(git branch | fzy)'
 alias lioj='ssh-add -D && ssh-add ~/.ssh/github_optijon_rsa'
 alias lij='ssh-add -D && ssh-add ~/.ssh/jonohrt_github_rsa'
 alias hprs='hub pr show'
-alias gb='git branch --sort=-committerdate'
+alias gb='git branch --sort=-committerdate | fzf | read branch; git checkout $branch'
+
+alias op=' emacsclient'
 
 # Add autocomplete to the custom tmux functions.
 compctl -K tmux-and-tmuxinator-sessions-autofill ta
@@ -178,11 +182,12 @@ export ONFIDO_API_KEY=test_RrixH0WC5PFMaTIkisZcYsbnu8CfRW8S
 export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:$HOME/.emacs.d/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
 
 
-# Start rbenv
-eval "$(rbenv init -)"
 
 #Start direnv
 eval "$(direnv hook zsh)"
+
+#Start fasd
+eval "$(fasd --init auto)"
 
 
 
@@ -190,26 +195,16 @@ export PATH=~/bin:$PATH
 
 alias cat="ccat"
 # Tesla project shortcuts
-alias @tesla='cd $HOME/Projects/tesla'
-alias @adapter='cd $HOME/Projects/tesla/projects/tesla-adapter'
-alias @auth='cd $HOME/Projects/tesla/projects/tesla-auth'
-alias @data-point='cd $HOME/Projects/tesla/projects/tesla-data-point'
-alias @deployment='cd $HOME/Projects/tesla/projects/tesla-deployment'
-alias @permission='cd $HOME/Projects/tesla/projects/tesla-permission'
-alias @proxy='cd $HOME/Projects/tesla/projects/tesla-proxy'
-alias @site='cd $HOME/Projects/tesla/projects/tesla-site'
-alias @ui='cd $HOME/Projects/tesla/projects/tesla-ui'
-alias @weather='cd $HOME/Projects/tesla/projects/tesla-weather'
+alias @tesla='cd $HOME/Code/tesla'
+alias @deployment='cd $HOME/Code/tesla/projects/tesla-deployment'
+alias @permission='cd $HOME/Code/tesla/projects/tesla-permission'
+alias @site='cd $HOME/Code/tesla/projects/tesla-site'
+alias @ui='cd $HOME/Code/tesla/projects/tesla-ui'
+alias @core-ui='cd $HOME/Code/tesla/projects/core-ui'
 
 alias dfl='dotfiles '
 alias kx="kubectx"
 alias gco="git branch | cut -c 3- | fzy | xargs git checkout"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
   export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
@@ -239,6 +234,8 @@ bindkey '^W' my-backward-delete-word
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Change cursor shape between insert and normal mode in iTerm2.app
+
+
 
 # {{{1 vi mode cursor indicator
 function zle-keymap-select zle-line-init
@@ -376,3 +373,10 @@ bind-git-helper() {
 bindkey -r "^G"
 bind-git-helper f b t g r
 unset -f bind-git-helper
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:/Users/johrt/Code/tesla/projects/tesla-deployment:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/johrt/.kube/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/johrt/.kube/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc'; fi
