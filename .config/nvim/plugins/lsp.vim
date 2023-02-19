@@ -1,11 +1,18 @@
 lua << EOF
 local nvim_lsp = require('lspconfig')
+nvim_lsp['eslint'].setup {
+  capabilities = capabilities
+}
+
+vim.g.coq_settings = { auto_start = true }
+local coq = require "coq" -- add this
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
 
   --Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -36,13 +43,42 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "tsserver", "solargraph"}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
+ local servers = { "solargraph"}
+ for _, lsp in ipairs(servers) do
+   nvim_lsp[lsp].setup {
+     on_attach = on_attach,
+     flags = {
+       debounce_text_changes = 150,
+     }
+   }
+ end
+--" nvim_lsp.solargraph.setup {
+--"   settings = {
+--"     solargraph = {
+--"       diagnostics = true,
+--"       completion = true
+--"     }
+--"   },
+--
+--"   on_attach = attacher
+--" }
+
+nvim_lsp.tsserver.setup {
+ on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+  end,
+flags = {
+  debounce_text_changes = 150,
   }
-end
+}
+
+require("null-ls").setup({
+    sources = {
+        require("null-ls").builtins.formatting.eslint_d,
+        -- require("null-ls").builtins.diagnostics.eslint,
+        require("null-ls").builtins.completion.spell,
+    },
+})
+vim.cmd [[autocmd BufWritePre * if (expand("<afile>")) != "db/schema.rb" | execute 'lua vim.lsp.buf.formatting_sync(nil, 2000)' | endif ]]
 EOF
+

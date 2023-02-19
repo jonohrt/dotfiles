@@ -3,8 +3,10 @@
   "typescript.validate.enable": false,
   "javascript.suggest.enabled": false,
   "javascript.validate.enable": false,
-  "sh.enable": true,
-  "solargraph.commandPath": "/Users/johrt/.rbenv/shims/solargraph",
-  "solargraph.useBundler": true
-
+  "sh.enable": false,
+  "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
+  "solargraph.autoformat" : true,
+  "solargraph.formatting": true,
+  "coc.preferences.formatOnSaveFiletypes": ["ruby", "html", "erb"]
 }

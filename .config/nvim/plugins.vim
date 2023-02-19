@@ -1,20 +1,23 @@
 call plug#begin('~/.config/nvim/bundle')
 
+Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
 Plug 'stsewd/fzf-checkout.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'haya14busa/incsearch.vim'
 
+Plug 'jreybert/vimagit'
 Plug 'git@github.com:tpope/vim-projectionist.git'
-
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'preservim/nerdtree'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'farmergreg/vim-lastplace'
 "Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'svermeulen/vim-yoink'
 Plug 'svermeulen/vim-subversive'
 "Plug 'janko-m/vim-test'
-"Plug 'git@github.com:Galooshi/vim-import-js.git'
+Plug 'git@github.com:galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
 "Plug 'melonmanchan/vim-tmux-resizer'
 "Plug 'wellle/tmux-complete.vim'
@@ -25,7 +28,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 "Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 "" Plug 'mxw/vim-jsx'
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 "Plug 'junegunn/vim-emoji'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 "" Language servers
@@ -39,27 +42,30 @@ Plug 'ericbn/vim-relativize'
 
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'tpope/vim-fugitive'
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'TimUntersberger/neogit'
-Plug 'sindrets/diffview.nvim'
+" Plug 'TimUntersberger/neogit'
 
-Plug 'hrsh7th/nvim-compe'
 "" Enable Gbrowse
 Plug 'tpope/vim-rhubarb'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/playground'
+" Plug 'lukas-reineke/lsp-format.nvim'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" Plug 'nvim-treesitter/playground'
 
 
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 "Plug 'neomake/neomake'
-Plug 'dense-analysis/ale'
-Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
+" Plug 'dense-analysis/ale'
+" Plug 'nathunsmitty/nvim-ale-diagnostic', {'branch': 'main'}
 "Plug 'Quramy/vim-js-pretty-template'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-"" Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 ""
 "Plug 'itspriddle/vim-shellcheck'
 "" Sets the project root to the current Git repository by default
@@ -94,7 +100,7 @@ Plug 'honza/vim-snippets'
 
 "" Ruby
 Plug 'tpope/vim-rails'
-" Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 
 "" FZF
 Plug 'junegunn/fzf.vim'

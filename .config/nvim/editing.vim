@@ -100,3 +100,5 @@ autocmd Syntax * syn match CamelCase
   \ containedin=.*Comment.*,.*String.*,VimwikiLink contains=@NoSpell contained
 
 au TermOpen * setlocal nospell
+
+let g:loaded_ruby_provider = 0

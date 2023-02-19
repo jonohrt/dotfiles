@@ -1,21 +1,22 @@
 {
     "global": {
         "check_for_updates_on_startup": true,
-        "show_in_menu_bar": true,
+        "show_in_menu_bar": false,
         "show_profile_name_in_menu_bar": false
     },
     "profiles": [
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
+                    "basic.simultaneous_threshold_milliseconds": 100,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500
+                    "basic.to_if_alone_timeout_milliseconds": 500,
+                    "basic.to_if_held_down_threshold_milliseconds": 500,
+                    "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "description": "Tap CapsLock (⇪) → Escape (⎋); Hold CapsLock (⇪) → Control (⌃)",
                         "manipulators": [
                             {
                                 "from": {
@@ -28,7 +29,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control"
+                                        "key_code": "left_control",
+                                        "lazy": true
                                     }
                                 ],
                                 "to_if_alone": [
@@ -36,57 +38,40 @@
                                         "key_code": "escape"
                                     }
                                 ],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_control"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Toggle caps_lock by pressing left_shift + right_shift at the same time",
+                        "description": "Change enter to control if pressed with other keys",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_shift",
+                                    "key_code": "return_or_enter",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_shift"
-                                        ],
                                         "optional": [
-                                            "caps_lock"
+                                            "any"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "left_shift"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_shift",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "left_shift"
-                                        ],
-                                        "optional": [
-                                            "caps_lock"
+                                        "key_code": "left_command",
+                                        "modifiers": [
+                                            "left_shift",
+                                            "left_control",
+                                            "left_option"
                                         ]
                                     }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "caps_lock"
-                                    }
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "right_shift"
+                                        "key_code": "return_or_enter"
                                     }
                                 ],
                                 "type": "basic"
@@ -125,6 +110,73 @@
                             }
                         }
                     ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 308,
+                        "vendor_id": 2131
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "delete_forward"
+                            },
+                            "to": {
+                                "consumer_key_code": "volume_decrement"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "escape"
+                            },
+                            "to": {
+                                "key_code": "grave_accent_and_tilde"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "insert"
+                            },
+                            "to": {
+                                "consumer_key_code": "volume_increment"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_option"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 636,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -226,10 +278,14 @@
                 }
             ],
             "name": "Default profile",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
-                "country_code": 0
+                "country_code": 0,
+                "mouse_key_xy_scale": 100
             }
         }
     ]
