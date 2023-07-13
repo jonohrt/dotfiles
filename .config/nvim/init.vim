@@ -6,6 +6,8 @@ source ~/.config/nvim/themes.vim
 source ~/.config/nvim/autocommands.vim
 
 " Plugins
+source ~/.config/nvim/plugins/mason.lua
+source ~/.config/nvim/plugins/lspkind.lua
 "source ~/.config/nvim/plugins/language-client.vim
 source ~/.config/nvim/plugins/delimitMate.vim
 "source ~/.config/nvim/plugins/deoplete.vim
@@ -23,7 +25,15 @@ source ~/.config/nvim/plugins/fugitive.vim
 "source ~/.config/nvim/plugins/vim-caser.vim
 "source ~/.config/nvim/plugins/ranger.vim
 "source ~/.config/nvim/plugins/markdown-preview.vim
-source ~/.config/nvim/plugins/lsp.vim
+source ~/.config/nvim/plugins/lsp-config.lua
+source ~/.config/nvim/plugins/comp.rc.lua
+"source ~/.config/nvim/plugins/null-ls.lua
+source ~/.config/nvim/plugins/iced.vim
+" source ~/.config/nvim/plugins/scratch.vim
+" source ~/.config/nvim/plugins/nvim-cmp.vim
+
+
+
 
 
 " source ~/.config/nvim/plugins/lsp-formatter.lua

@@ -19,10 +19,11 @@
        ;;japanese
 
        :completion
-       (company +childframe +tng)           ; the ultimate code completion backend
+       (company +childframe +tng +fuzzy) ; the ultimate code completion backend
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       (ivy +fuzzy +prescient +icons +fzf)               ; a search engine for love and life
+       ; (ivy +fuzzy +prescient +icons +fzf)               ; a search engine for love and life
+       vertico
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -40,7 +41,7 @@
        (popup            ; tame sudden yet inevitable temporary windows
         +all             ; catch all popups that start with an asterix
         +defaults)       ; default popup rules
-       pretty-code       ; replace bits of code with pretty symbols
+       ; pretty-code       ; replace bits of code with pretty symbols
        ;;tabs              ; an tab bar for Emacs
        treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
@@ -107,6 +108,7 @@
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
+       tree-sitter
 
        :lang
        ;;agda              ; types of types of types of types...

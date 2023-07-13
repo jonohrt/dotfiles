@@ -380,3 +380,6 @@ if [ -f '/Users/johrt/.kube/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joh
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH=$PATH:~/.config/nvim/bundle/vim-iced/bin
+export PATH=$PATH:/Users/johrt/Library/Python/3.11/bin
+source ~/.zsh_profile

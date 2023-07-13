@@ -65,20 +65,21 @@ end
 
 nvim_lsp.tsserver.setup {
  on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = true
   end,
 flags = {
   debounce_text_changes = 150,
   }
 }
-
-require("null-ls").setup({
-    sources = {
-        require("null-ls").builtins.formatting.eslint_d,
-        -- require("null-ls").builtins.diagnostics.eslint,
-        require("null-ls").builtins.completion.spell,
-    },
-})
-vim.cmd [[autocmd BufWritePre * if (expand("<afile>")) != "db/schema.rb" | execute 'lua vim.lsp.buf.formatting_sync(nil, 2000)' | endif ]]
+--" require'lspconfig'.tsserver.setup {}
+--" require("null-ls").setup({
+--"     sources = {
+--"         require("null-ls").builtins.formatting.eslint_d,
+--"         -- require("null-ls").builtins.diagnostics.eslint,
+--"         require("null-ls").builtins.completion.spell,
+--"     },
+--" })
+--vim.cmd [[autocmd BufWritePre *.rb if (expand("<afile>")) != "db/schema.rb" | execute 'lua vim.lsp.buf.formatting_sync(nil, 2000)' | endif ]]
+--vim.cmd "autocmd BufWritePre *.tsx,*.ts,*.js,*.jsx EslintFixAll"
 EOF
 
