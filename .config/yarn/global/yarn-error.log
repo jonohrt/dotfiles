@@ -1,0 +1,36 @@
+Arguments: 
+  /Users/johrt/.nvm/versions/node/v20.18.3/bin/node /opt/homebrew/Cellar/yarn/1.22.19/libexec/bin/yarn.js global add typescriptreact
+
+PATH: 
+  /Users/johrt/.local/bin/:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:/Users/johrt/Code/tesla/projects/tesla-deployment:/Users/johrt/.nvm/versions/node/v20.18.3/bin:/Users/johrt/bin:/Users/jonohrt/bin:/usr/local/bin:/Users/johrt/go/bin:/Users/johrt/.cargo/bin:/Users/johrt/.bin:/Users/johrt/.rbenv/shims:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/usr/local/go/bin:/Users/johrt/.local/bin/:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/Users/johrt/Code/tesla/projects/tesla-deployment:/Users/johrt/.nvm/versions/node/v20.18.3/bin:/Users/johrt/bin:/Users/jonohrt/bin:/Users/johrt/go/bin:/Users/johrt/.cargo/bin:/Users/johrt/.bin:/Users/johrt/.rbenv/shims:/Applications/iTerm.app/Contents/Resources/utilities:/opt/homebrew/opt/fzf/bin:/Users/johrt/Library/Python/3.6/bin:/Users/johrt/Library/Android/sdk/tools:/Users/johrt/Library/Android/sdk/platform-tools:/Users/jonohrt/Projects/gssl/kubernetes/client/bin:/Users/johrt/.emacs.d/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin:/Users/johrt/.config/nvim/bundle/vim-iced/bin:/Users/johrt/Library/Python/3.11/bin:/Users/johrt/Library/Python/3.6/bin:/Users/johrt/Library/Android/sdk/tools:/Users/johrt/Library/Android/sdk/platform-tools:/Users/jonohrt/Projects/gssl/kubernetes/client/bin:/Users/johrt/.emacs.d/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin:/Users/johrt/.config/nvim/bundle/vim-iced/bin:/Users/johrt/Library/Python/3.11/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.18.3
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/typescriptreact: Not found
+      at params.callback [as _callback] (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:66145:18)
+      at self.callback (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:140890:22)
+      at Request.emit (node:events:518:28)
+      at Request.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141862:10)
+      at Request.emit (node:events:518:28)
+      at IncomingMessage.<anonymous> (/opt/homebrew/Cellar/yarn/1.22.19/libexec/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:632:28)
+      at IncomingMessage.emit (node:events:530:35)
+      at endReadableNT (node:internal/streams/readable:1698:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

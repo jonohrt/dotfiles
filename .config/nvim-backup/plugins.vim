@@ -7,20 +7,23 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-bundler'
 Plug 'haya14busa/incsearch.vim'
 Plug 'nvim-tree/nvim-web-devicons'
-
+"Plug "sindrets/diffview.nvim"
+"Plug 'NeogitOrg/neogit'
+"Plug 'augmentcode/augment.vim',  {'branch': 'main'}
+Plug 'NickvanDyke/opencode.nvim', {'branch': 'main'}
 " Completion
 Plug 'hrsh7th/cmp-nvim-lsp', {'branch': 'main'}
 Plug 'hrsh7th/cmp-buffer', {'branch': 'main'}
 Plug 'hrsh7th/cmp-path', {'branch': 'main'}
 Plug 'hrsh7th/cmp-cmdline', {'branch': 'main'}
 Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
-Plug 'quangnguyen30192/cmp-nvim-ultisnips', {'branch': 'main'}
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips', {'branch': 'main'}
 
 Plug 'folke/trouble.nvim', {'branch': 'main'}
 Plug 'jreybert/vimagit'
 Plug 'git@github.com:tpope/vim-projectionist.git'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'farmergreg/vim-lastplace'
 "Plug 'https://github.com/adelarsq/vim-matchit'
@@ -29,6 +32,11 @@ Plug 'svermeulen/vim-subversive'
 "Plug 'janko-m/vim-test'
 Plug 'git@github.com:galooshi/vim-import-js.git'
 Plug 'AndrewRadev/splitjoin.vim'
+
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'nvim-neotest/neotest'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'olimorris/neotest-rspec', {'branch': 'main'}
 " Plug 'mtth/scratch.vim'
 "Plug 'melonmanchan/vim-tmux-resizer'
 "Plug 'wellle/tmux-complete.vim'
@@ -53,7 +61,7 @@ Plug 'ericbn/vim-relativize'
 
 Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'tpope/vim-fugitive'
-Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason-lspconfig.nvim', { 'branch': 'main'}
 Plug 'williamboman/mason.nvim', { 'branch': 'main'}
 Plug 'nvim-lua/plenary.nvim'
 " Plug 'TimUntersberger/neogit'
@@ -84,14 +92,14 @@ Plug 'Raimondi/delimitMate'
 "Plug 'itspriddle/vim-shellcheck'
 "" Sets the project root to the current Git repository by default
 Plug 'airblade/vim-rooter'
-Plug 'francoiscabrol/ranger.vim'
 Plug 'tpope/vim-endwise'
+Plug 'ivalkeen/nerdtree-execute'
 
 "" Shows the current git diff in the gutter.
 Plug 'tpope/vim-sleuth'
 " Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter'
-" Plug 'github/copilot.vim', {'branch': 'release'}
+Plug 'airblade/vim-gitgutter', { 'branch': 'main'}
+Plug 'github/copilot.vim', {'branch': 'release'}
 
 "" Language syntax highlighting
 "Plug 'HerringtonDarkholme/yats.vim'
@@ -111,7 +119,7 @@ Plug 'liquidz/vim-iced', {'branch': 'main'}
 " Plug 'gpanders/nvim-parinfer'
 
 "" Snippits
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 "" Ruby

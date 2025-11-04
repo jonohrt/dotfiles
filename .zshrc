@@ -8,7 +8,7 @@ zstyle ':prezto:module:prompt' theme 'wikimatze'
 
 set -o vi
 
-source /Users/johrt/.fzf-git.sh.git/fzf-git.sh
+# source /Users/johrt/.fzf-git.sh.git/fzf-git.sh
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)
 
@@ -176,7 +176,6 @@ export PATH="$GOPATH/bin:$HOME/.cargo/bin:$HOME/.bin:$PATH:$HOME/Library/Python/
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools:/Users/jonohrt/Projects/gssl/kubernetes/client/bin
-export ONFIDO_API_KEY=test_RrixH0WC5PFMaTIkisZcYsbnu8CfRW8S
 # export DATABASE_URL=postgres://ufssjf6hl483bs:pfkt9u45cosat35er99mskdnl5m@ec2-52-55-241-220.compute-1.amazonaws.com:5432/d6nte8tnopamd1
 
 export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:$HOME/.emacs.d/bin:/Users/johrt/Projects/tesla/projects/tesla-auth/bin
@@ -185,11 +184,6 @@ export PATH=/Users/jonohrt/bin:/usr/local/bin:$PATH:$HOME/.emacs.d/bin:/Users/jo
 
 #Start direnv
 eval "$(direnv hook zsh)"
-
-#Start fasd
-eval "$(fasd --init auto)"
-
-
 
 export PATH=~/bin:$PATH
 
@@ -206,8 +200,8 @@ alias dfl='dotfiles '
 alias kx="kubectx"
 alias gco="git branch | cut -c 3- | fzy | xargs git checkout"
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
 # Enable Ctrl-x-e to edit command line
@@ -370,6 +364,7 @@ bind-git-helper() {
   done
 }
 
+
 bindkey -r "^G"
 bind-git-helper f b t g r
 unset -f bind-git-helper
@@ -383,3 +378,16 @@ if [ -f '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 export PATH=$PATH:~/.config/nvim/bundle/vim-iced/bin
 export PATH=$PATH:/Users/johrt/Library/Python/3.11/bin
 source ~/.zsh_profile
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH=~/.local/bin/:$PATH
+
+. "$HOME/.local/bin/env"
+export OPENCODE_AUTO_APPROVE_READ=true
+# Load sensitive environment variables from ~/.env
+# This file is git-ignored and contains all API keys and tokens
+if [ -f "$HOME/.env" ]; then
+  source "$HOME/.env"
+fi
+

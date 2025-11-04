@@ -29,10 +29,12 @@ source ~/.config/nvim/plugins/lsp-config.lua
 source ~/.config/nvim/plugins/comp.rc.lua
 "source ~/.config/nvim/plugins/null-ls.lua
 source ~/.config/nvim/plugins/iced.vim
+source ~/.config/nvim/plugins/neotest.lua
+" source ~/.config/nvim/plugins/neogit.lua
 " source ~/.config/nvim/plugins/scratch.vim
 " source ~/.config/nvim/plugins/nvim-cmp.vim
 
-
+source ~/.config/nvim/plugins/opencode.vim
 
 
 

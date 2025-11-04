@@ -47,8 +47,8 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'syntax-highlighting' \
   'alias-tips' \
-  'contrib-clipboard' \
-  'contrib-kubernetes' \
+  'clipboard' \
+  'kubernetes' \
   'prompt' \
   'enhancd'
 

@@ -96,13 +96,13 @@ nvim_lsp.tsserver.setup {
 }
 
 nvim_lsp.solargraph.setup {
-     on_attach = on_attach,
-     flags = {
-       debounce_text_changes = 150,
-     }
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
 }
 
-vim.cmd [[autocmd BufWritePre *.rb if (expand("<afile>")) != "db/schema.rb" | execute 'lua vim.lsp.buf.formatting_sync(nil, 2000)' | endif ]]
+vim.cmd [[autocmd BufWritePre *.rb if (expand("<afile>")) != "db/schema.rb" | execute 'lua vim.lsp.buf.format(nil, 2000)' | endif ]]
 
 nvim_lsp.eslint.setup({
   capabilities = capabilities,
@@ -116,39 +116,39 @@ nvim_lsp.eslint.setup({
   cmd = { "vscode-eslint-language-server", "--stdio" },
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx",
     "vue", "svelte", "astro" },
-    settings = {
-  codeAction = {
-    disableRuleComment = {
-      enable = true,
-      location = "separateLine"
+  settings = {
+    codeAction = {
+      disableRuleComment = {
+        enable = true,
+        location = "separateLine"
+      },
+      showDocumentation = {
+        enable = true
+      }
     },
-    showDocumentation = {
-      enable = true
+    codeActionOnSave = {
+      enable = false,
+      mode = "all"
+    },
+    experimental = {
+      useFlatConfig = false
+    },
+    format = true,
+    nodePath = "",
+    onIgnoredFiles = "off",
+    packageManager = "npm",
+    problems = {
+      shortenToSingleLine = false
+    },
+    quiet = false,
+    rulesCustomizations = {},
+    run = "onType",
+    useESLintClass = false,
+    validate = "on",
+    workingDirectory = {
+      mode = "location"
     }
-  },
-  codeActionOnSave = {
-    enable = false,
-    mode = "all"
-  },
-  experimental = {
-    useFlatConfig = false
-  },
-  format = true,
-  nodePath = "",
-  onIgnoredFiles = "off",
-  packageManager = "npm",
-  problems = {
-    shortenToSingleLine = false
-  },
-  quiet = false,
-  rulesCustomizations = {},
-  run = "onType",
-  useESLintClass = false,
-  validate = "on",
-  workingDirectory = {
-    mode = "location"
   }
-}
 })
 
 nvim_lsp.sourcekit.setup {

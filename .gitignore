@@ -1,0 +1,53 @@
+# Sensitive environment variables
+.env
+.env.local
+
+# API Keys, Tokens, and Credentials
+.config/gcloud/
+.config/configstore/
+.config/opencode/opencode.json
+
+# Google Cloud credentials and tokens
+.config/gcloud/application_default_credentials.json
+.config/gcloud/credentials.db
+.config/gcloud/access_tokens.db
+.config/gcloud/legacy_credentials/
+.config/gcloud/logs/
+.config/gcloud/cache/
+.config/gcloud/.last_*
+.config/gcloud/active_config
+.config/gcloud/configurations/
+.config/gcloud/default_configs.db
+.config/gcloud/gce
+
+# Firebase credentials
+.config/configstore/firebase-tools.json
+
+# Container/Podman credentials
+.config/containers/
+
+# Fish shell environment
+.config/fish/conf.d/uv.env.fish
+
+# Update notifiers (may contain tokens)
+.config/configstore/update-notifier-*
+
+# GitHub credentials
+.config/github-copilot/hosts.json
+
+# macOS
+.DS_Store
+.config/.DS_Store
+
+# SSH keys (if any)
+.ssh/id_*
+.ssh/*_rsa
+.ssh/*_rsa.pub
+.ssh/known_hosts
+
+# Any other credential files
+**/credentials.json
+**/credentials.db
+**/*_token
+**/*_secret
+**/*credentials*
