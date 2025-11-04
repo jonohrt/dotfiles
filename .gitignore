@@ -35,6 +35,10 @@
 # GitHub credentials
 .config/github-copilot/hosts.json
 
+# Alfred workflows with credentials
+.alfred/Alfred.alfredpreferences/workflows/**/client_secret.json
+.alfred/Alfred.alfredpreferences/workflows/**/credentials.json
+
 # macOS
 .DS_Store
 .config/.DS_Store
