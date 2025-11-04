@@ -153,7 +153,7 @@ alias -g dcr='docker-compose run '
 
 alias -g list-ports='sudo lsof -PiTCP -sTCP:LISTEN'
 
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gpo='git pull origin'
 alias gc="git checkout"
 
@@ -377,13 +377,20 @@ if [ -f '/Users/johrt/.kube/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/joh
 if [ -f '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/johrt/.kube/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH=$PATH:~/.config/nvim/bundle/vim-iced/bin
 export PATH=$PATH:/Users/johrt/Library/Python/3.11/bin
-source ~/.zsh_profile
+
+# Source .zsh_profile if it exists
+if [ -f "$HOME/.zsh_profile" ]; then
+  source "$HOME/.zsh_profile"
+fi
 
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export PATH=~/.local/bin/:$PATH
 
-. "$HOME/.local/bin/env"
+# Source local environment if it exists
+if [ -f "$HOME/.local/bin/env" ]; then
+  . "$HOME/.local/bin/env"
+fi
 export OPENCODE_AUTO_APPROVE_READ=true
 # Load sensitive environment variables from ~/.env
 # This file is git-ignored and contains all API keys and tokens
